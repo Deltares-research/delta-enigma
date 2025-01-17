@@ -37,11 +37,11 @@ jobs:
       
       - name: Clean build directory
         run: |
-          uv run sphinx-build -M clean source _build
+          uv run sphinx-build -M clean ./source ./build
            
       - name: Sphinx build
         run: |
-          uv run sphinx-build source _build
+          uv run sphinx-build ./source ./build
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
