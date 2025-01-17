@@ -32,16 +32,16 @@ jobs:
       
       - name: Clean build directory
         run: |
-          uv run sphinx-build -M clean source _build
+          uv run sphinx-build -M clean ./source ./build
       
       - name: Sphinx build
         run: |
-          uv run sphinx-build source _build
+          uv run sphinx-build ./source ./build
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build  # Changed from ./docs/_build/ to docs/_build
+          publish_dir: ./build  
           force_orphan: true
