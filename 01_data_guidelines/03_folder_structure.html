@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Folder Structure Delta Enigma Data Platform &#8212; Delta Enigma Data Management Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f7d0a212" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_data_guidelines/03_folder_structure';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Uploading Data to Yoda (SURF)" href="../02_actions/01_upload_data.html" />
+    <link rel="prev" title="Metadata Standard" href="02_metadata_standards.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Delta Enigma Data Management Handbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Management Guidelines</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_data_collection.html">Data Collection Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_metadata_standards.html">Metadata Standard</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Folder Structure Delta Enigma Data Platform</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Actions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_actions/01_upload_data.html">Uploading Data to Yoda (SURF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_actions/03_publish_data.html">Add metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_actions/02_add_metadata.html">Publish data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">General information</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03_general_info/01_sensors.html">All sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_general_info/02_data_stewards.html">Data Stewards</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Deltares-research/delta-enigma.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01_data_guidelines/03_folder_structure.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Folder Structure Delta Enigma Data Platform</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-structure">Base Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchy-explanation">Hierarchy Explanation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-1-research">Level 1: Research</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-institution-identifier">Level 2: Institution Identifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-3-data-category">Level 3: Data Category</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-4-work-package">Level 4: Work Package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-5-location">Level 5: Location</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-6-sensor-type">Level 6: Sensor Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-7-specific-sensor">Level 7: Specific Sensor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-8-year">Level 8: Year</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-9-date">Level 9: Date</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-conventions">Naming Conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-rules">General Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-formatting">Date Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-options">Data Type Options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-convention">File Naming Convention</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-data">Adding New Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-management">Folder Management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-sensor-data">Adding New Sensor Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-institutions">Multiple Institutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-path-generation">Automated Path Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-script">Python Script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="folder-structure-delta-enigma-data-platform">
+<h1>Folder Structure Delta Enigma Data Platform<a class="headerlink" href="#folder-structure-delta-enigma-data-platform" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This document describes the standardized folder structure implemented in the iRODS data platform for organizing research sensor data. The structure is designed to facilitate efficient data management, easy retrieval, and clear organization of sensor data from various sources.</p>
+</section>
+<section id="base-structure">
+<h2>Base Structure<a class="headerlink" href="#base-structure" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Research/
+└── research-uu/
+    └── raw-data/
+        └── WP3/
+            └── zandmotor/
+                └── camera/
+                    └── camera1/
+                        └── 2025/
+                            └── 147_may.26/
+                                └── 1716706803.Sun.May.26_07_00_03.UTC.2024.zandmotor.camera1.raw-data.jpg
+</pre></div>
+</div>
+</section>
+<section id="hierarchy-explanation">
+<h2>Hierarchy Explanation<a class="headerlink" href="#hierarchy-explanation" title="Link to this heading">#</a></h2>
+<section id="level-1-research">
+<h3>Level 1: Research<a class="headerlink" href="#level-1-research" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Top-level directory containing all research-related data</p></li>
+<li><p>Separates research data from other potential platform contents</p></li>
+</ul>
+</section>
+<section id="level-2-institution-identifier">
+<h3>Level 2: Institution Identifier<a class="headerlink" href="#level-2-institution-identifier" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">research-[institution-code]</span></code></p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">research-uu</span></code> (University Utrecht)</p></li>
+<li><p>Enables multi-institutional collaboration while maintaining data separation</p></li>
+<li><p>Facilitates access control and data ownership</p></li>
+</ul>
+</section>
+<section id="level-3-data-category">
+<h3>Level 3: Data Category<a class="headerlink" href="#level-3-data-category" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">raw-data</span></code></p></li>
+<li><p>Distinguishes between different data processing stages</p></li>
+<li><p>Available categories:</p>
+<ul>
+<li><p>raw-data</p></li>
+<li><p>processed-data</p></li>
+<li><p>published-data</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="level-4-work-package">
+<h3>Level 4: Work Package<a class="headerlink" href="#level-4-work-package" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">WP[number]</span></code></p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">WP3</span></code></p></li>
+<li><p>Organizes data by project components or research phases</p></li>
+<li><p>Enables clear separation of different project aspects</p></li>
+</ul>
+</section>
+<section id="level-5-location">
+<h3>Level 5: Location<a class="headerlink" href="#level-5-location" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">Zandmotor</span></code></p></li>
+<li><p>Identifies specific research sites or study areas</p></li>
+<li><p>Allows for geographical organization of data</p></li>
+</ul>
+</section>
+<section id="level-6-sensor-type">
+<h3>Level 6: Sensor Type<a class="headerlink" href="#level-6-sensor-type" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">camera</span></code></p></li>
+<li><p>Categorizes data by measurement instrument</p></li>
+<li><p>Facilitates organization of different data collection methods</p></li>
+</ul>
+</section>
+<section id="level-7-specific-sensor">
+<h3>Level 7: Specific Sensor<a class="headerlink" href="#level-7-specific-sensor" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">[sensor-type][number]</span></code></p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">camera1</span></code></p></li>
+<li><p>Identifies individual sensors within a sensor type</p></li>
+<li><p>Enables tracking of data provenance</p></li>
+</ul>
+</section>
+<section id="level-8-year">
+<h3>Level 8: Year<a class="headerlink" href="#level-8-year" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">YYYY</span></code></p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">2025</span></code></p></li>
+<li><p>Organizes data chronologically</p></li>
+<li><p>Facilitates temporal data management</p></li>
+</ul>
+</section>
+<section id="level-9-date">
+<h3>Level 9: Date<a class="headerlink" href="#level-9-date" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">[day-of-year]_[month].[day]</span></code></p></li>
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">147_may.26</span></code></p></li>
+<li><p>Provides detailed temporal information</p></li>
+<li><p>Enables precise data retrieval</p></li>
+</ul>
+</section>
+</section>
+<section id="naming-conventions">
+<h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Link to this heading">#</a></h2>
+<section id="general-rules">
+<h3>General Rules<a class="headerlink" href="#general-rules" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Use lowercase for all folder names except where specified</p></li>
+<li><p>Avoid spaces in folder names where possible</p></li>
+<li><p>Use hyphens (-) instead of underscores (_) for word separation</p></li>
+<li><p>Use consistent date formatting throughout</p></li>
+</ol>
+</section>
+<section id="date-formatting">
+<h3>Date Formatting<a class="headerlink" href="#date-formatting" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Year: Four-digit format (YYYY)</p></li>
+<li><p>Day of year: Three-digit format (001-365)</p></li>
+<li><p>Month: Lowercase three-letter abbreviation</p></li>
+<li><p>Day: Two-digit format with period separator</p></li>
+</ul>
+</section>
+<section id="data-type-options">
+<h3>Data Type Options<a class="headerlink" href="#data-type-options" title="Link to this heading">#</a></h3>
+<p>The platform recognizes three specific data type categories:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">raw-data</span></code>: Original, unprocessed data directly from sensors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processed-data</span></code>: Data that has undergone cleaning, calibration, or other processing steps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">published-data</span></code>: Final, validated data ready for publication or sharing</p></li>
+</ul>
+</section>
+<section id="file-naming-convention">
+<h3>File Naming Convention<a class="headerlink" href="#file-naming-convention" title="Link to this heading">#</a></h3>
+<p>Files follow a standardized naming pattern that includes temporal and spatial metadata:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">timestamp</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">day</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">month</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">day</span><span class="p">]</span><span class="n">_</span><span class="p">[</span><span class="n">HH</span><span class="p">]</span><span class="n">_</span><span class="p">[</span><span class="n">MM</span><span class="p">]</span><span class="n">_</span><span class="p">[</span><span class="n">SS</span><span class="p">]</span><span class="o">.</span><span class="n">UTC</span><span class="o">.</span><span class="p">[</span><span class="n">YYYY</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">location</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">sensor_type</span><span class="p">][</span><span class="n">number</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">data_type</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">extension</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Components explanation:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: Unix timestamp (e.g., 1716706803)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">day</span></code>: Three-letter day abbreviation (e.g., Sun)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">month</span></code>: Three-letter month abbreviation (e.g., May)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">day</span></code>: Two-digit day of month (e.g., 26)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HH_MM_SS</span></code>: Time in 24-hour format with underscores</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UTC</span></code>: Timezone indicator (always UTC)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">YYYY</span></code>: Four-digit year</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">location</span></code>: Site identifier (e.g., zandmotor)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sensor_type[number]</span></code>: Sensor identifier (e.g., camera12)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data_type</span></code>: One of: raw, processed, published</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extension</span></code>: File extension (e.g., jpg)</p></li>
+</ul>
+<p>Example filename:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1716706803.</span><span class="n">Sun</span><span class="o">.</span><span class="n">May</span><span class="mf">.26_07_00_03</span><span class="o">.</span><span class="n">UTC</span><span class="mf">.2024</span><span class="o">.</span><span class="n">zandmotor</span><span class="o">.</span><span class="n">camera12</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">jpg</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<section id="adding-new-data">
+<h3>Adding New Data<a class="headerlink" href="#adding-new-data" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Verify the correct work package designation</p></li>
+<li><p>Use existing sensor type folders when available</p></li>
+<li><p>Create new sensor type folders only when necessary</p></li>
+<li><p>Maintain consistent naming conventions</p></li>
+<li><p>Verify date formatting before creating new folders</p></li>
+</ol>
+</section>
+<section id="folder-management">
+<h3>Folder Management<a class="headerlink" href="#folder-management" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Don’t create empty folders</p></li>
+<li><p>Document any deviations from the standard structure</p></li>
+<li><p>Maintain consistent capitalization</p></li>
+<li><p>Use standard date formats</p></li>
+<li><p>Include necessary metadata at each level</p></li>
+</ol>
+</section>
+</section>
+<section id="example-use-cases">
+<h2>Example Use Cases<a class="headerlink" href="#example-use-cases" title="Link to this heading">#</a></h2>
+<section id="adding-new-sensor-data">
+<h3>Adding New Sensor Data<a class="headerlink" href="#adding-new-sensor-data" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Research/
+└── research-uu/
+    └── Raw data/
+        └── WP3/
+            └── Zandmotor/
+                ├── camera/
+                │   └── camera1/
+                │       └── 2025/
+                │           └── 147_may.26/
+                └── lidar/
+                    └── lidar1/
+                        └── 2025/
+                            └── 147_may.26/
+</pre></div>
+</div>
+</section>
+<section id="multiple-institutions">
+<h3>Multiple Institutions<a class="headerlink" href="#multiple-institutions" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Research/
+├── research-uu/
+└── research-tudelft/
+</pre></div>
+</div>
+</section>
+</section>
+<section id="automated-path-generation">
+<h2>Automated Path Generation<a class="headerlink" href="#automated-path-generation" title="Link to this heading">#</a></h2>
+<section id="python-script">
+<h3>Python Script<a class="headerlink" href="#python-script" title="Link to this heading">#</a></h3>
+<p>The following Python script can be used to automatically generate paths and filenames according to this folder structure:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">generate_irods_path</span><span class="p">(</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">institution</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;uu&#39;</span><span class="p">,</span>
+    <span class="n">work_package</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">location</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;zandmotor&#39;</span><span class="p">,</span>
+    <span class="n">sensor_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;camera&#39;</span><span class="p">,</span>
+    <span class="n">sensor_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;raw-data&#39;</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate an iRODS file path based on metadata.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        timestamp (int): Unix timestamp for the data</span>
+<span class="sd">        institution (str): Institution code (default: &#39;uu&#39;)</span>
+<span class="sd">        work_package (int): Work package number (default: 3)</span>
+<span class="sd">        location (str): Location name (default: &#39;zandmotor&#39;)</span>
+<span class="sd">        sensor_type (str): Type of sensor (default: &#39;camera&#39;)</span>
+<span class="sd">        sensor_number (int): Sensor identifier (default: 1)</span>
+<span class="sd">        data_type (str): Type of data (default: &#39;raw&#39;)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        str: Complete file path following iRODS structure</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Convert timestamp to datetime</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
+    
+    <span class="c1"># Format the date components</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y&#39;</span><span class="p">)</span>
+    <span class="n">day_of_year</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%j&#39;</span><span class="p">)</span>
+    <span class="n">month_day</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%b.</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">date_folder</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">day_of_year</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">month_day</span><span class="si">}</span><span class="s1">&#39;</span>
+    
+    <span class="c1"># Construct path components</span>
+    <span class="n">path_components</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;Research&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;research-</span><span class="si">{</span><span class="n">institution</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>  <span class="c1"># Using hyphenated format</span>
+        <span class="sa">f</span><span class="s1">&#39;WP</span><span class="si">{</span><span class="n">work_package</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="n">location</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+        <span class="n">sensor_type</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sensor_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}{</span><span class="n">sensor_number</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="n">year</span><span class="p">,</span>
+        <span class="n">date_folder</span>
+    <span class="p">]</span>
+    
+    <span class="c1"># Join path components</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="o">*</span><span class="n">path_components</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">generate_irods_filename</span><span class="p">(</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">location</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;zandmotor&#39;</span><span class="p">,</span>
+    <span class="n">sensor_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;camera&#39;</span><span class="p">,</span>
+    <span class="n">sensor_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;raw&#39;</span><span class="p">,</span>
+    <span class="n">file_extension</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;jpg&#39;</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a filename for iRODS data following the convention.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
+    
+    <span class="c1"># Format datetime components</span>
+    <span class="n">timestamp_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">timestamp</span><span class="p">)</span>
+    <span class="n">datetime_str</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%a</span><span class="s1">.%b.</span><span class="si">%d</span><span class="s1">_%H_%M_%S.UTC.%Y&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Construct filename components</span>
+    <span class="n">filename_components</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">timestamp_str</span><span class="p">,</span>
+        <span class="n">datetime_str</span><span class="p">,</span>
+        <span class="n">location</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sensor_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}{</span><span class="n">sensor_number</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+        <span class="n">file_extension</span>
+    <span class="p">]</span>
+    
+    <span class="c1"># Join with dots</span>
+    <span class="k">return</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filename_components</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">generate_full_path</span><span class="p">(</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">institution</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;uu&#39;</span><span class="p">,</span>
+    <span class="n">work_package</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">location</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;zandmotor&#39;</span><span class="p">,</span>
+    <span class="n">sensor_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;camera&#39;</span><span class="p">,</span>
+    <span class="n">sensor_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;raw&#39;</span><span class="p">,</span>
+    <span class="n">file_extension</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;jpg&#39;</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate complete path including filename.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">generate_irods_path</span><span class="p">(</span>
+        <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+        <span class="n">institution</span><span class="o">=</span><span class="n">institution</span><span class="p">,</span>
+        <span class="n">work_package</span><span class="o">=</span><span class="n">work_package</span><span class="p">,</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+        <span class="n">sensor_type</span><span class="o">=</span><span class="n">sensor_type</span><span class="p">,</span>
+        <span class="n">sensor_number</span><span class="o">=</span><span class="n">sensor_number</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="n">data_type</span>
+    <span class="p">)</span>
+    
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">generate_irods_filename</span><span class="p">(</span>
+        <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+        <span class="n">location</span><span class="o">=</span><span class="n">location</span><span class="p">,</span>
+        <span class="n">sensor_type</span><span class="o">=</span><span class="n">sensor_type</span><span class="p">,</span>
+        <span class="n">sensor_number</span><span class="o">=</span><span class="n">sensor_number</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="o">=</span><span class="n">data_type</span><span class="p">,</span>
+        <span class="n">file_extension</span><span class="o">=</span><span class="n">file_extension</span>
+    <span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+<section id="example-usage">
+<h3>Example Usage<a class="headerlink" href="#example-usage" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example timestamp (May 26, 2024 07:00:03 UTC)</span>
+<span class="n">timestamp</span> <span class="o">=</span> <span class="mi">1716706803</span>
+
+<span class="c1"># Generate full path</span>
+<span class="n">full_path</span> <span class="o">=</span> <span class="n">generate_full_path</span><span class="p">(</span>
+    <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+    <span class="n">sensor_number</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">data_type</span><span class="o">=</span><span class="s1">&#39;raw&#39;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated path:</span><span class="se">\n</span><span class="si">{</span><span class="n">full_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will generate a path like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Research</span><span class="o">/</span><span class="n">research</span><span class="o">-</span><span class="n">uu</span><span class="o">/</span><span class="n">Raw</span> <span class="n">data</span><span class="o">/</span><span class="n">WP3</span><span class="o">/</span><span class="n">zandmotor</span><span class="o">/</span><span class="n">camera</span><span class="o">/</span><span class="n">camera12</span><span class="o">/</span><span class="mi">2024</span><span class="o">/</span><span class="mi">147</span><span class="n">_may</span><span class="mf">.26</span><span class="o">/</span><span class="mf">1716706803.</span><span class="n">Sun</span><span class="o">.</span><span class="n">May</span><span class="mf">.26_07_00_03</span><span class="o">.</span><span class="n">UTC</span><span class="mf">.2024</span><span class="o">.</span><span class="n">zandmotor</span><span class="o">.</span><span class="n">camera12</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">jpg</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This structure is designed to be scalable</p></li>
+<li><p>Additional levels can be added as needed</p></li>
+<li><p>Maintain consistency across all new additions</p></li>
+<li><p>Document any structural changes</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_metadata_standards.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Metadata Standard</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../02_actions/01_upload_data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Uploading Data to Yoda (SURF)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#base-structure">Base Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchy-explanation">Hierarchy Explanation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-1-research">Level 1: Research</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-2-institution-identifier">Level 2: Institution Identifier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-3-data-category">Level 3: Data Category</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-4-work-package">Level 4: Work Package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-5-location">Level 5: Location</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-6-sensor-type">Level 6: Sensor Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-7-specific-sensor">Level 7: Specific Sensor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-8-year">Level 8: Year</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#level-9-date">Level 9: Date</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-conventions">Naming Conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-rules">General Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-formatting">Date Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-type-options">Data Type Options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-convention">File Naming Convention</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-data">Adding New Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-management">Folder Management</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example Use Cases</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-sensor-data">Adding New Sensor Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-institutions">Multiple Institutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-path-generation">Automated Path Generation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-script">Python Script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes">Notes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jelle van Miltenburg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, Jelle van Miltenburg.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
