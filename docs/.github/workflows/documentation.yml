@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'docs/**'  
+      - 'docs/**'
   pull_request:
     branches: [ main ]
     paths:
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: docs 
+        working-directory: docs
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
@@ -37,17 +37,16 @@ jobs:
       
       - name: Clean build directory
         run: |
-          uv run sphinx-build -M clean ./source ./build
-           
+          uv run sphinx-build -M clean source _build
+      
       - name: Sphinx build
         run: |
-          uv run sphinx-build ./source ./build
+          uv run sphinx-build source _build
       
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
-          publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/_build/
+          publish_dir: docs/_build  # Changed from ./docs/_build/ to docs/_build
           force_orphan: true
