@@ -1,309 +1,164 @@
 # Folder Structure Delta Enigma Data Platform
 
-## Overview
-This document describes the standardized folder structure implemented in the iRODS data platform for organizing research sensor data. The structure is designed to facilitate efficient data management, easy retrieval, and clear organization of sensor data from various sources.
+# iRODS Data Platform Folder Structure Documentation
 
-## Base Structure
+## Overview
+This document outlines the standardized folder structure for sensor data storage within the iRODS data platform. The structure is designed to organize research data hierarchically, from institutional level down to individual data files.
+
+### Complete Path Example
 ```
 Research/
 └── research-uu/
-    └── raw-data/
-        └── WP3/
+    └── WP3/
+        └── project-x/
             └── zandmotor/
-                └── camera/
-                    └── camera1/
-                        └── 2025/
-                            └── 147_may.26/
-                                └── 1716706803.Sun.May.26_07_00_03.UTC.2024.zandmotor.camera1.raw-data.jpg
+                └── raw-data/
+                    └── camera/
+                        └── camera1/
+                            └── 2024/
+                                └── 147_May.26/
+                                    └── 1716706803.Sun.May.26_07_00_03.UTC.2024.zandmotor.camera1.raw-data.jpg
 ```
 
-## Hierarchy Explanation
+## Hierarchy Levels
 
-### Level 1: Research
-- Top-level directory containing all research-related data
-- Separates research data from other potential platform contents
+### 1. Root Level
+- `Research/`: Top-level directory for all research data
 
-### Level 2: Institution Identifier
-- Format: `research-[institution-code]`
-- Example: `research-uu` (University Utrecht)
-- Enables multi-institutional collaboration while maintaining data separation
-- Facilitates access control and data ownership
+### 2. Institution Level
+- `research-uu/`: Institution-specific directory
+  - Format: `research-{institution-code}`
 
-### Level 3: Data Category
-- Example: `raw-data`
+### 3. Work Package Level
+- `WP3/`: Work package identifier
+  - Format: `WP{number}`
+
+### 4. Project Level
+- `project-x/`: Specific project directory
+  - Format: `project-{project-name}`
+
+### 5. Location Level
+- `zandmotor/`: Geographic or site-specific location
+  - Format: `{location-name}`
+
+### 6. Data Classification
 - Distinguishes between different data processing stages
 - Available categories:
-  - raw-data
-  - processed-data
-  - published-data
+  - `raw-data/`: Unprocessed data directly from sensors
+  - `processed-data/`: Data that has undergone processing or analysis
+  - `published-data/`: Final, published versions of datasets
 
-### Level 4: Work Package
-- Format: `WP[number]`
-- Example: `WP3`
-- Organizes data by project components or research phases
-- Enables clear separation of different project aspects
+### 7. Sensor Type
+- `camera/`: Type of sensor or data collection device
+  - Format: `{sensor-type}`
 
-### Level 5: Location
-- Example: `Zandmotor`
-- Identifies specific research sites or study areas
-- Allows for geographical organization of data
+### 8. Device Instance
+- `camera1/`: Specific device identifier
+  - Format: `{sensor-type}{number}`
 
-### Level 6: Sensor Type
-- Example: `camera`
-- Categorizes data by measurement instrument
-- Facilitates organization of different data collection methods
+### 9. Temporal Organization
+- `2025/`: Year
+- `147_may.26/`: Day folder
+  - Format: `{day-of-year}_{month}.{day}`
 
-### Level 7: Specific Sensor
-- Format: `[sensor-type][number]`
-- Example: `camera1`
-- Identifies individual sensors within a sensor type
-- Enables tracking of data provenance
+## File Naming Convention
 
-### Level 8: Year
-- Format: `YYYY`
-- Example: `2025`
-- Organizes data chronologically
-- Facilitates temporal data management
+Pattern: `{unix_timestamp}.{human_readable_datetime}.{location}.{device_id}.{data_type}.{extension}`
 
-### Level 9: Date
-- Format: `[day-of-year]_[month].[day]`
-- Example: `147_may.26`
-- Provides detailed temporal information
-- Enables precise data retrieval
+Example: `1716706803.Sun.May.26_07_00_03.UTC.2024.zandmotor.camera1.raw-data.jpg`
 
-## Naming Conventions
+Components:
+- `1716706803`: Unix timestamp for unique identification and sorting
+- `Sun.May.26_07_00_03.UTC.2024`: Human-readable date/time (DayOfWeek.Month.Day_Hour_Minute_Second.UTC.Year)
+- `zandmotor`: Location identifier (lowercase)
+- `camera1`: Device identifier (sensor type + number)
+- `raw-data`: Processing stage (options: raw-data, processed-data, published-data)
+- `jpg`: File extension (lowercase)
 
-### General Rules
-1. Use lowercase for all folder names except where specified
-2. Avoid spaces in folder names where possible
-3. Use hyphens (-) instead of underscores (_) for word separation
-4. Use consistent date formatting throughout
+## Notes
 
-### Date Formatting
-- Year: Four-digit format (YYYY)
-- Day of year: Three-digit format (001-365)
-- Month: Lowercase three-letter abbreviation
-- Day: Two-digit format with period separator
+- All folder names should use lowercase letters and hyphens for spaces
+- Date folders should include both numerical day of year and calendar date
+- File names should be descriptive while following the established pattern
+- Each level of the hierarchy serves a specific organizational purpose
 
-### Data Type Options
-The platform recognizes three specific data type categories:
-- `raw-data`: Original, unprocessed data directly from sensors
-- `processed-data`: Data that has undergone cleaning, calibration, or other processing steps
-- `published-data`: Final, validated data ready for publication or sharing
+## Python Implementation
 
-### File Naming Convention
-Files follow a standardized naming pattern that includes temporal and spatial metadata:
-
-```
-[timestamp].[day].[month].[day]_[HH]_[MM]_[SS].UTC.[YYYY].[location].[sensor_type][number].[data_type].[extension]
-```
-
-Components explanation:
-- `timestamp`: Unix timestamp (e.g., 1716706803)
-- `day`: Three-letter day abbreviation (e.g., Sun)
-- `month`: Three-letter month abbreviation (e.g., May)
-- `day`: Two-digit day of month (e.g., 26)
-- `HH_MM_SS`: Time in 24-hour format with underscores
-- `UTC`: Timezone indicator (always UTC)
-- `YYYY`: Four-digit year
-- `location`: Site identifier (e.g., zandmotor)
-- `sensor_type[number]`: Sensor identifier (e.g., camera12)
-- `data_type`: One of: raw, processed, published
-- `extension`: File extension (e.g., jpg)
-
-Example filename:
-```
-1716706803.Sun.May.26_07_00_03.UTC.2024.zandmotor.camera12.raw.jpg
-```
-
-## Best Practices
-
-### Adding New Data
-1. Verify the correct work package designation
-2. Use existing sensor type folders when available
-3. Create new sensor type folders only when necessary
-4. Maintain consistent naming conventions
-5. Verify date formatting before creating new folders
-
-### Folder Management
-1. Don't create empty folders
-2. Document any deviations from the standard structure
-3. Maintain consistent capitalization
-4. Use standard date formats
-5. Include necessary metadata at each level
-
-## Example Use Cases
-
-### Adding New Sensor Data
-```
-Research/
-└── research-uu/
-    └── Raw data/
-        └── WP3/
-            └── Zandmotor/
-                ├── camera/
-                │   └── camera1/
-                │       └── 2025/
-                │           └── 147_may.26/
-                └── lidar/
-                    └── lidar1/
-                        └── 2025/
-                            └── 147_may.26/
-```
-
-### Multiple Institutions
-```
-Research/
-├── research-uu/
-└── research-tudelft/
-```
-
-## Automated Path Generation
-
-### Python Script
-The following Python script can be used to automatically generate paths and filenames according to this folder structure:
+Below is a Python script that generates standardized file paths following this structure:
 
 ```python
 import datetime
 import os
 
-def generate_irods_path(
+def metadata2filepath(
     timestamp: int,
-    institution: str = 'uu',
-    work_package: int = 3,
-    location: str = 'zandmotor',
-    sensor_type: str = 'camera',
-    sensor_number: int = 1,
-    data_type: str = 'raw-data'
-) -> str:
+    institution: str,
+    work_package: str,
+    project: str,
+    location: str,
+    sensor_type: str,
+    sensor_number: int,
+    data_type: str
+):
     """
-    Generate an iRODS file path based on metadata.
+    Generate a standardized filepath from metadata.
     
     Args:
-        timestamp (int): Unix timestamp for the data
-        institution (str): Institution code (default: 'uu')
-        work_package (int): Work package number (default: 3)
-        location (str): Location name (default: 'zandmotor')
-        sensor_type (str): Type of sensor (default: 'camera')
-        sensor_number (int): Sensor identifier (default: 1)
-        data_type (str): Type of data (default: 'raw')
+        timestamp (int): Unix timestamp
+        institution (str): Institution code (e.g., 'uu')
+        work_package (str): Work package identifier (e.g., 'WP3')
+        project (str): Project name (e.g., 'project-x')
+        location (str): Location name (e.g., 'zandmotor')
+        sensor_type (str): Type of sensor (e.g., 'camera')
+        sensor_number (int): Sensor identifier number (e.g., 1)
+        data_type (str): Type of data (e.g., 'raw-data')
     
     Returns:
-        str: Complete file path following iRODS structure
+        str: Complete filepath
     """
     # Convert timestamp to datetime
     dt = datetime.datetime.fromtimestamp(timestamp)
     
-    # Format the date components
-    year = dt.strftime('%Y')
-    day_of_year = dt.strftime('%j')
-    month_day = dt.strftime('%b.%d').lower()
-    date_folder = f'{day_of_year}_{month_day}'
+    # Generate filename components
+    filename_parts = [
+        str(timestamp),
+        dt.strftime('%a.%b.%d_%H_%M_%S.UTC.%Y'),
+        location,
+        f'{sensor_type}{sensor_number}',
+        data_type,
+        'jpg'
+    ]
+    filename = '.'.join(filename_parts)
     
-    # Construct path components
-    path_components = [
+    # Generate path components
+    path_parts = [
         'Research',
         f'research-{institution}',
-        f'{data_type}',  # Using hyphenated format
-        f'WP{work_package}',
-        location.lower(),
-        sensor_type.lower(),
-        f'{sensor_type.lower()}{sensor_number}',
-        year,
-        date_folder
+        work_package,
+        project,
+        location,
+        data_type,
+        sensor_type,
+        f'{sensor_type}{sensor_number}',
+        dt.strftime('%Y'),
+        dt.strftime('%j_%b.%d')
     ]
     
-    # Join path components
-    return os.path.join(*path_components)
+    # Join path and filename
+    return os.path.join(*path_parts, filename)
 
-def generate_irods_filename(
-    timestamp: int,
-    location: str = 'zandmotor',
-    sensor_type: str = 'camera',
-    sensor_number: int = 1,
-    data_type: str = 'raw',
-    file_extension: str = 'jpg'
-) -> str:
-    """
-    Generate a filename for iRODS data following the convention.
-    """
-    dt = datetime.datetime.fromtimestamp(timestamp)
-    
-    # Format datetime components
-    timestamp_str = str(timestamp)
-    datetime_str = dt.strftime('%a.%b.%d_%H_%M_%S.UTC.%Y')
-    
-    # Construct filename components
-    filename_components = [
-        timestamp_str,
-        datetime_str,
-        location.lower(),
-        f'{sensor_type.lower()}{sensor_number}',
-        data_type.lower(),
-        file_extension
-    ]
-    
-    # Join with dots
-    return '.'.join(filename_components)
-
-def generate_full_path(
-    timestamp: int,
-    institution: str = 'uu',
-    work_package: int = 3,
-    location: str = 'zandmotor',
-    sensor_type: str = 'camera',
-    sensor_number: int = 1,
-    data_type: str = 'raw',
-    file_extension: str = 'jpg'
-) -> str:
-    """
-    Generate complete path including filename.
-    """
-    path = generate_irods_path(
-        timestamp=timestamp,
-        institution=institution,
-        work_package=work_package,
-        location=location,
-        sensor_type=sensor_type,
-        sensor_number=sensor_number,
-        data_type=data_type
+# Example usage
+if __name__ == "__main__":
+    # Example: Generate path for a specific timestamp
+    filepath = metadata2filepath(
+        timestamp=1716706803,  # May 26, 2024 07:00:03 UTC
+        institution='uu',
+        work_package='WP3',
+        project='project-x',
+        location='zandmotor',
+        sensor_type='camera',
+        sensor_number=1,
+        data_type='raw-data'
     )
-    
-    filename = generate_irods_filename(
-        timestamp=timestamp,
-        location=location,
-        sensor_type=sensor_type,
-        sensor_number=sensor_number,
-        data_type=data_type,
-        file_extension=file_extension
-    )
-    
-    return os.path.join(path, filename)
-
+    print(f"Generated filepath:\n{filepath}")
 ```
-
-### Example Usage
-```python
-# Example timestamp (May 26, 2024 07:00:03 UTC)
-timestamp = 1716706803
-
-# Generate full path
-full_path = generate_full_path(
-    timestamp=timestamp,
-    sensor_number=12,
-    data_type='raw'
-)
-
-print(f"Generated path:\n{full_path}")
-```
-
-This will generate a path like:
-```
-Research/research-uu/Raw data/WP3/zandmotor/camera/camera12/2024/147_may.26/1716706803.Sun.May.26_07_00_03.UTC.2024.zandmotor.camera12.raw.jpg
-```
-
-## Notes
-- This structure is designed to be scalable
-- Additional levels can be added as needed
-- Maintain consistency across all new additions
-- Document any structural changes
