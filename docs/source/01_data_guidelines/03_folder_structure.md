@@ -35,7 +35,7 @@ Research/
 
 ### 4. Project Level
 - `project-x/`: Specific project directory
-  - Format: `project-{project-name}`
+  - Format: `{project-name}`
 
 ### 5. Location Level
 - `zandmotor/`: Geographic or site-specific location
@@ -80,7 +80,6 @@ Components:
 - All folder names should use lowercase letters and hyphens for spaces
 - Date folders should include both numerical day of year and calendar date
 - File names should be descriptive while following the established pattern
-- Each level of the hierarchy serves a specific organizational purpose
 
 ## Python Implementation
 
