@@ -4,3 +4,32 @@
     }
     
 }
+
+/* Logo styling */
+.navbar-brand img {
+    max-height: 200px;  /* Adjust this value based on your needs */
+    width: auto;
+    padding: 5px;
+}
+
+/* For dark background compatibility */
+.navbar-brand {
+    background: transparent;
+}
+
+/* Optional: Add hover effect */
+.navbar-brand:hover {
+    opacity: 0.9;
+}
+
+/* Table styling */
+table.docutils tr:hover {
+    background-color: transparent !important;  /* Remove hover effect */
+}
+
+/* If you want a subtle hover effect instead of purple, use: */
+/*
+table.docutils tr:hover {
+    background-color: #f8f9fa !important;  
+}
+*/

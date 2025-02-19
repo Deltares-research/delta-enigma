@@ -50,6 +50,9 @@ exclude_patterns = []
 
 html_title = "Delta Enigma Data Management Handbook"
 
+# Add logo configuration
+html_logo = "_static/logo_Delta-ENIGMA.png"
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
@@ -60,11 +63,13 @@ html_theme = 'sphinx_book_theme'
 html_theme_options = {
     "repository_url": "https://github.com/Deltares-research/delta-enigma.git",
     "use_repository_button": True,
-    "use_fullscreen_button" : False,
-    "use_download_button" : True,
+    "use_fullscreen_button": False,
+    "use_download_button": True,
     "collapse_navigation": True,
     "navigation_with_keys": False,
     "show_toc_level": 1,
+    "logo_only": True,  # Show only logo in the sidebar
+    "home_page_in_toc": True,  # Include home page in navigation
 } 
 
 # Add acceptable suffixes 
