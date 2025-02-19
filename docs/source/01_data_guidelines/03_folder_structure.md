@@ -1,6 +1,4 @@
-# Folder Structure Delta Enigma Data Platform
-
-# iRODS Data Platform Folder Structure Documentation
+# Folder Structure 
 
 ## Overview
 This document outlines the standardized folder structure for sensor data storage within the iRODS data platform. The structure is designed to organize research data hierarchically, from institutional level down to individual data files.

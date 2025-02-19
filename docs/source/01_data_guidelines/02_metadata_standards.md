@@ -2,39 +2,77 @@
 
 ## Overview
 
-Delta Enigma uses (Geo)DCAT as its primary metadata standard for describing research datasets. This choice ensures compatibility with European data initiatives while providing comprehensive coverage for our diverse data types.
+Delta Enigma uses a custom metadata schema based on (Geo)DCAT principles for describing research datasets. This choice ensures compatibility with European data initiatives while providing comprehensive coverage for our diverse data types.
 
-## Our Metadata Standard: (Geo)DCAT
-
-### Why (Geo)DCAT?
-
-We chose (Geo)DCAT based on several key factors:
-- Growing adoption in European data spaces
-- Comprehensive field coverage
-- Reasonable implementation complexity
-- Strong interoperability with other platforms
+## Our Metadata Standard
 
 ### Core Metadata Elements
 
-Required metadata elements include:
+The following elements are required for all datasets:
+
+#### Basic Information
 - Title
 - Description
+- Documentation
+- Domain 
+- Topic Category 
+- Version
+- Language
+- Resource Type (Dataset, Series, or Service)
+
+#### Temporal and Spatial Coverage
+- Temporal Coverage (start and end dates)
+- Geographical Coverage (bounding box coordinates)
+- Reference System (WGS84, Rijksdriehoekstelsel, or ETRS89)
+
+#### Data Collection
+- Acquisition Sensor (from standardized list)
 - Keywords
-- Theme/Category
-- Publisher
+- Related Resources
+- Creation Date
 - Release Date
-- Update Frequency
-- Spatial Coverage
-- Temporal Coverage
-- License
-- Access Rights
-- Distribution Format
+
+#### Responsible Parties
+- Creator(s) - including:
+  - Name
+  - Affiliation
+  - Person Identifier (e.g., ORCID)
+- Contact Point
+  - Name
+  - Affiliation
+  - Contact Details
+
+#### Rights and Access
+- License Document (e.g., CC-BY, CC-BY-SA)
+- Access Rights (Publicly accessible, Has access restrictions, Not public)
+
+### Optional Elements
+
+Additional metadata elements that can be included:
+- Work Package
+- Expedition/Collection Information
+- Funding Reference
+- Applicable Legislation
+- Contributors
+- Rights Statement
+- Additional Documentation Links
+
+### Controlled Vocabularies
+
+The metadata schema uses controlled vocabularies for several fields:
+- Domain categories
+- Topic categories (based on ISO 19115)
+- Acquisition sensors
+- License types
+- Reference systems
+- Work packages
+- Language codes (ISO 639-1)
 
 ### Creating Metadata Records
 
-Go to [Add Metadata](../02_actions/02_add_metadata) for more information
-
+For detailed instructions on creating metadata records, see [Add Metadata](../02_actions/02_add_metadata).
 
 ## Additional Resources
 
 - [(Geo)DCAT Documentation](https://www.w3.org/TR/vocab-dcat/)
+
