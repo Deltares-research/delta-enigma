@@ -44,6 +44,7 @@ body {
 }
 
 .bd-content table tbody tr {
+    background-color: white !important;  /* Force white background for all rows */
     border-bottom: 1px solid #ddd;  /* Thin grey line between rows */
 }
 
