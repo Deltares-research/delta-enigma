@@ -87,3 +87,9 @@ html_static_path = ['_static']
 html_css_files = [
     'custom.css',
 ]
+
+# Add MyST extensions
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist"
+]

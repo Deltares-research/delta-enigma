@@ -4,9 +4,11 @@ Welcome to the Delta Enigma Data Management Handbook. This guide provides compre
 
 **Please note that this handbook is a work in progress and that parts of it might be under construction. Feedback is always welcome via your data steward.**
 
-## About This Handbook
+```{admonition} About This Handbook
+:class: about-handbook
 
 This handbook serves as the primary reference for researchers, data managers, and other stakeholders involved in the Delta Enigma project. It covers all aspects of data management, from planning to preservation.
+```
 
 Getting Support
 -------------

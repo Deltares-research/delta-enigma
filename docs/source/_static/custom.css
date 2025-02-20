@@ -1,8 +1,18 @@
+/* Import Open Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+/* Global text styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: black;
+}
+
+/* Keep headings black */
 :root {
     h1 {
-        color: #003B71 !important;
+        color: black !important;
     }
-    
 }
 
 /* Logo styling */
@@ -19,12 +29,12 @@
 
 /* Optional: Add hover effect */
 .navbar-brand:hover {
-    opacity: 0.9;
+    opacity: 0.5;
 }
 
 /* Table styling */
-table.docutils tr:hover {
-    background-color: transparent !important;  /* Remove hover effect */
+.bd-content table tbody tr:hover {
+    background-color: #24A793 !important;  /* Light red */
 }
 
 /* If you want a subtle hover effect instead of purple, use: */
@@ -33,3 +43,39 @@ table.docutils tr:hover {
     background-color: #f8f9fa !important;  
 }
 */
+
+/* About handbook styling */
+.admonition.about-handbook {
+    --pst-icon-admonition-default: "";  /* Remove the bell icon */
+    background-color: #F5DEB3;  /* Sand color */
+    border-radius: 15px;        /* Round edges */
+    padding: 20px;              /* Inner spacing */
+    margin: 20px 0;             /* Vertical spacing */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow */
+    border: none;
+}
+
+.admonition.about-handbook .admonition-title {
+    display: block;  /* Show the title */
+    background: none;  /* Remove default background */
+    font-size: 1.5em;  /* Larger font size */
+    color: black;  /* Change from #003B71 to black */
+    padding: 0 0 10px 0;  /* Add some space below the title */
+    margin: 0;  /* Remove default margins */
+    border: none;  /* Remove any borders */
+    padding-left: 0 !important;
+}
+
+.admonition.about-handbook .admonition-title::before {
+    content: "" !important;
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 0 !important;
+}
+
+/* Remove any remaining icon styling */
+.admonition.about-handbook p.admonition-title::before,
+.admonition.about-handbook p.admonition-title::after {
+    display: none !important;
+}
