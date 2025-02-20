@@ -53,6 +53,9 @@ html_title = "Delta Enigma Data Management Handbook"
 # Add logo configuration
 html_logo = "_static/logo_Delta-ENIGMA.png"
 
+# Add these lines to configure the favicon
+html_favicon = '_static/DE-favicon.png'
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
