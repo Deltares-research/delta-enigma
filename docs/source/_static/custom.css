@@ -33,8 +33,28 @@ body {
 }
 
 /* Table styling */
+.bd-content table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.bd-content table thead tr {
+    border-bottom: 2px solid #ddd;  /* Thicker line below header */
+}
+
+.bd-content table tbody tr {
+    border-bottom: 1px solid #ddd;  /* Thin grey line between rows */
+}
+
 .bd-content table tbody tr:hover {
-    background-color: #24A793 !important;  /* Light red */
+    background-color: #24A793 !important;
+}
+
+/* Remove any default table borders */
+.bd-content table td,
+.bd-content table th {
+    border: none;
 }
 
 /* If you want a subtle hover effect instead of purple, use: */
@@ -44,38 +64,29 @@ table.docutils tr:hover {
 }
 */
 
-/* About handbook styling */
-.admonition.about-handbook {
+/* Info block styling - reusable yellow blocks */
+.admonition.info-block {
     --pst-icon-admonition-default: "";  /* Remove the bell icon */
     background-color: #F5DEB3;  /* Sand color */
-    border-radius: 15px;        /* Round edges */
-    padding: 20px;              /* Inner spacing */
-    margin: 20px 0;             /* Vertical spacing */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);  /* Subtle shadow */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border: none;
 }
 
-.admonition.about-handbook .admonition-title {
-    display: block;  /* Show the title */
-    background: none;  /* Remove default background */
-    font-size: 1.5em;  /* Larger font size */
-    color: black;  /* Change from #003B71 to black */
-    padding: 0 0 10px 0;  /* Add some space below the title */
-    margin: 0;  /* Remove default margins */
-    border: none;  /* Remove any borders */
+.admonition.info-block .admonition-title {
+    display: block;
+    background: none;
+    font-size: 1.5em;
+    color: black;
+    padding: 0 0 10px 0;
+    margin: 0;
+    border: none;
     padding-left: 0 !important;
 }
 
-.admonition.about-handbook .admonition-title::before {
-    content: "" !important;
-    display: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 0 !important;
-}
-
-/* Remove any remaining icon styling */
-.admonition.about-handbook p.admonition-title::before,
-.admonition.about-handbook p.admonition-title::after {
+.admonition.info-block p.admonition-title::before,
+.admonition.info-block p.admonition-title::after {
     display: none !important;
 }
