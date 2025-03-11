@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Delta Enigma'
-copyright = '2024, Jelle van Miltenburg'
+copyright = '2025, Delta Enigma'
 author = 'Jelle van Miltenburg'
 
 # The full version, including alpha/beta/rc tags

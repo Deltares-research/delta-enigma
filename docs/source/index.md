@@ -33,6 +33,7 @@ If you need guidance on data cleaning requirements or best practices, *contact y
 01_data_guidelines/01_data_collection
 01_data_guidelines/02_metadata_standards
 01_data_guidelines/03_folder_structure
+01_data_guidelines/04_vocabularies
 ```
 ```{toctree}
 :maxdepth: 2
