@@ -24,11 +24,6 @@ Use our interactive tool to generate standardized file paths and folder structur
         </div>
 
         <div style="margin-bottom: 15px;">
-            <label for="project" style="display: block; margin-bottom: 5px; font-weight: bold;">Project name:</label>
-            <input type="text" id="project" value="project-x" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
-        </div>
-
-        <div style="margin-bottom: 15px;">
             <label for="location" style="display: block; margin-bottom: 5px; font-weight: bold;">Location:</label>
             <input type="text" id="location" value="zandmotor" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
         </div>
@@ -80,7 +75,6 @@ Use our interactive tool to generate standardized file paths and folder structur
             // Get form values
             const institution = document.getElementById('institution').value;
             const workPackage = document.getElementById('workPackage').value;
-            const project = document.getElementById('project').value;
             const location = document.getElementById('location').value;
             const sensorType = document.getElementById('sensorType').value;
             const sensorNumber = document.getElementById('sensorNumber').value;
@@ -98,7 +92,6 @@ Use our interactive tool to generate standardized file paths and folder structur
                 'Research',
                 `research-${institution}`,
                 workPackage,
-                project,
                 location,
                 dataType,
                 sensorType,
@@ -138,14 +131,13 @@ Use our interactive tool to generate standardized file paths and folder structur
 Research/
 └── research-uu/
     └── WP3/
-        └── project-x/
-            └── zandmotor/
-                └── raw-data/
-                    └── camera/
-                        └── camera1/
-                            └── 2024/
-                                └── 147_May.26/
-                                    └── 1716706803.Sun.May.26_07_00_03.UTC.2024.zandmotor.camera1.raw-data.jpg
+          └── zandmotor/
+              └── raw-data/
+                  └── camera/
+                      └── camera1/
+                          └── 2024/
+                              └── May.26/
+                                  └── May.26.2024.zandmotor.camera1.raw-data.jpg
 ```
 
 ### Hierarchy Levels
@@ -161,30 +153,26 @@ Research/
    - `WP3/`: Work package identifier
    - Format: `WP{number}`
 
-4. **Project Level**
-   - `project-x/`: Specific project directory
-   - Format: `{project-name}`
-
-5. **Location Level**
+4. **Location Level**
    - `zandmotor/`: Geographic or site-specific location
    - Format: `{location-name}`
 
-6. **Data Classification**
+5. **Data Classification**
    - Distinguishes between different data processing stages
    - Available categories:
      - `raw-data/`: Unprocessed data directly from sensors
      - `processed-data/`: Data that has undergone processing or analysis
      - `published-data/`: Final, published versions of datasets
 
-7. **Sensor Type**
+6. **Sensor Type**
    - `camera/`: Type of sensor or data collection device
    - Format: `{sensor-type}`
 
-8. **Device Instance**
+7. **Device Instance**
    - `camera1/`: Specific device identifier
    - Format: `{sensor-type}{number}`
 
-9. **Temporal Organization**
+8. **Temporal Organization**
    - `2024/`: Year
    - `147_May.26/`: Day folder
    - Format: `{day_of_year}_{month}.{day}`
