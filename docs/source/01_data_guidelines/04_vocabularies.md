@@ -20,6 +20,8 @@ The SeaDataNet vocabularies are published as Linked Data through the NERC Vocabu
 In our project, we specifically use:
 - **P08 vocabulary** ([https://vocab.nerc.ac.uk/collection/P08/current/](https://vocab.nerc.ac.uk/collection/P08/current/)): Defines broad scientific domains for parameter usage
 - **P03 vocabulary** ([https://vocab.nerc.ac.uk/collection/P03/current/](https://vocab.nerc.ac.uk/collection/P03/current/)): Provides more specific parameter groups for discovery
+- **A04 vocabulary** ([https://vocab.nerc.ac.uk/collection/A04/current/](https://vocab.nerc.ac.uk/collection/A04/current/)): Includes the Hydrology domain field for inland water measurements
+- **P02 vocabulary** ([https://vocab.nerc.ac.uk/collection/P02/current/](https://vocab.nerc.ac.uk/collection/P02/current/)): Contains hydrological topic categories linked through Hydrography
 
 These standardized vocabularies allow us to classify and describe our oceanographic measurements in a way that aligns with international best practices and ensures interoperability with other marine data systems.
 
@@ -31,4 +33,3 @@ You can explore the keywords and the hierchy below, and use this information to 
   <iframe src="../_static/vocabularies/keyword_hierarchy.html" width="100%" height="800px" frameborder="0" title="SeaDataNet Keyword Hierarchy" style="display: block;"></iframe>
 </div>
 ```
-
