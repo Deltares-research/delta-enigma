@@ -1,0 +1,46 @@
+Uitzoeken
+- Kunnen we het contract beëindigen over 3 jaar?
+- Dat moet dan via UU lopen?
+
+
+Metadata schema
+- Domain: Checken of de opties volledig zijn
+- Topic category
+    - Help text toevoegen @Vincent
+- Affiliation name + affiliation identifier
+    - Extend list with participating institute
+- Default values to check
+    - Legislation
+    - Access rights
+    - Contact point -> affiliation
+
+Done
+- Period covered —> delete
+- Collection period —> temporal coverage
+- Reference system
+    - List with reference systems
+        - Rijksdriehoekstelsel
+        - ETRS89 (europees) 
+        - WGS84 (Default)
+- Aquisition sensor
+    - Check for completeness
+    - Sort alphabetically 
+- Add work package as keyword?
+    - Below topic category
+    - Project work package
+        - List with number and title (As on website)
+- Secondary instrument —> enable empty field
+    - Maybe remove the field
+- P08 level
+    Add 'Hydrology'
+- P03
+
+- Applicable legistation
+    - Make optional
+- Data type —> delete
+
+- Creator>creator type —> 
+- Creator affiliation —> make similar to contributor
+
+
+

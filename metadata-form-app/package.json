@@ -1,0 +1,23 @@
+{
+  "name": "delta-enigma-metadata-generator",
+  "version": "1.0.0",
+  "description": "A web application for generating compliant metadata JSON files for the Delta Enigma project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "metadata",
+    "json",
+    "form",
+    "generator",
+    "delta-enigma"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": ">=12.0.0"
+  }
+} 

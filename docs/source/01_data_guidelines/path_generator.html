@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Enigma Path Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+            white-space: pre-wrap;
+        }
+        .copy-button {
+            background-color: #2196F3;
+            margin-top: 10px;
+        }
+        .copy-button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delta Enigma Path Generator</h1>
+    <p>Use this tool to generate standardized file paths and folder structures for your data.</p>
+
+    <form id="pathForm">
+        <div class="form-group">
+            <label for="institution">Institution code:</label>
+            <input type="text" id="institution" value="uu" required>
+        </div>
+
+        <div class="form-group">
+            <label for="workPackage">Work package:</label>
+            <input type="text" id="workPackage" value="WP3" required>
+        </div>
+
+        <div class="form-group">
+            <label for="project">Project name:</label>
+            <input type="text" id="project" value="project-x" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" value="zandmotor" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sensorType">Sensor type:</label>
+            <input type="text" id="sensorType" value="camera" required>
+        </div>
+
+        <div class="form-group">
+            <label for="sensorNumber">Sensor number:</label>
+            <input type="number" id="sensorNumber" value="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dataType">Data type:</label>
+            <select id="dataType" required>
+                <option value="raw-data">raw-data</option>
+                <option value="processed-data">processed-data</option>
+                <option value="published-data">published-data</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="extension">File extension:</label>
+            <input type="text" id="extension" value="jpg" required>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+        </div>
+
+        <button type="submit">Generate Path</button>
+    </form>
+
+    <div id="result" class="result" style="display: none;">
+        <h3>Generated Path Information</h3>
+        <div id="pathOutput"></div>
+        <button class="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+
+    <script>
+        // Set default date to today
+        document.getElementById('date').valueAsDate = new Date();
+
+        document.getElementById('pathForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const institution = document.getElementById('institution').value;
+            const workPackage = document.getElementById('workPackage').value;
+            const project = document.getElementById('project').value;
+            const location = document.getElementById('location').value;
+            const sensorType = document.getElementById('sensorType').value;
+            const sensorNumber = document.getElementById('sensorNumber').value;
+            const dataType = document.getElementById('dataType').value;
+            const extension = document.getElementById('extension').value;
+            const date = new Date(document.getElementById('date').value);
+
+            // Format date components
+            const month = date.toLocaleString('default', { month: 'short' });
+            const day = date.getDate();
+            const year = date.getFullYear();
+
+            // Generate path components
+            const pathParts = [
+                'Research',
+                `research-${institution}`,
+                workPackage,
+                project,
+                location,
+                dataType,
+                sensorType,
+                `${sensorType}${sensorNumber}`,
+                year.toString(),
+                `${month}.${day}`
+            ];
+
+            // Generate filename components
+            const filenameParts = [
+                `${month}.${day}.${year}`,
+                location,
+                `${sensorType}${sensorNumber}`,
+                dataType,
+                extension
+            ];
+
+            // Create full path and filename
+            const filepath = pathParts.join('/');
+            const filename = filenameParts.join('.');
+            const completePath = `${filepath}/${filename}`;
+
+            // Display results
+            const resultDiv = document.getElementById('result');
+            const pathOutput = document.getElementById('pathOutput');
+            pathOutput.innerHTML = `Full path: ${filepath}\nFilename: ${filename}\nComplete path: ${completePath}`;
+            resultDiv.style.display = 'block';
+        });
+
+        function copyToClipboard() {
+            const text = document.getElementById('pathOutput').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Path copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html> 

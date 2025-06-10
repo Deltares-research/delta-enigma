@@ -1,0 +1,1390 @@
+{
+    "@graph": [
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS02/",
+            "pav:authoredOn": "2005-03-10 14:31:52.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS02/1/"
+            },
+            "dce:identifier": "SDN:P08::DS02",
+            "pav:version": "1",
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS02",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "skos:altLabel": "Chemical oceanography",
+            "dc:date": "2005-03-10 14:31:52.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H24/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H28/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H26/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H22/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H33/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H25/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H31/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H27/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H23/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H90/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H21/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H32/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H75/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H30/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H76/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H74/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/DOXY/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/NUTS/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/BIOINFO/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C020/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C050/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C017/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/C02/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C010/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/BIOTOX/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C055/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/DOM/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/TRACELE/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C030/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/CONT/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C045/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C025/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C040/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C003/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C005/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B007/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/N2O/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/C015/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The chemical oceanographic science domain"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS02",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Chemical oceanography"
+            },
+            "owl:versionInfo": "1"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS07/",
+            "pav:authoredOn": "2005-03-10 14:31:52.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS07/1/"
+            },
+            "dce:identifier": "SDN:P08::DS07",
+            "@type": "skos:Concept",
+            "skos:definition": {
+                "@language": "en",
+                "@value": "Parameters related to spatial and temporal co-ordinates, entity referencing (eg record numbering and keys) and access control"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS07",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Administration and dimensions"
+            },
+            "owl:versionInfo": "1",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/PRESS/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                }
+            ],
+            "dc:date": "2005-03-10 14:31:52.0",
+            "skos:altLabel": "Administration and dimensions",
+            "skos:notation": "SDN:P08::DS07",
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "owl:sameAs": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P03/current/Z005/"
+            },
+            "pav:version": "1"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS09/",
+            "pav:authoredOn": "2006-08-09 09:59:42.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS09/1/"
+            },
+            "dce:identifier": "SDN:P08::DS09",
+            "pav:version": "1",
+            "owl:sameAs": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P03/current/M015/"
+            },
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS09",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:related": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H003/"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b00818zy"
+                }
+            ],
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The cryosphere science domain, including ice on both land and sea"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS09",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Cryosphere"
+            },
+            "owl:versionInfo": "1",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SEAICE/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/M04/"
+                }
+            ],
+            "dc:date": "2006-08-09 09:59:42.0",
+            "skos:altLabel": "Cryosphere"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS06/",
+            "pav:authoredOn": "2005-03-10 14:31:52.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS06/1/"
+            },
+            "dce:identifier": "SDN:P08::DS06",
+            "pav:version": "1",
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "@type": "skos:Concept",
+            "skos:definition": {
+                "@language": "en",
+                "@value": "No specific association with an identified domain"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS06",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Cross-discipline"
+            },
+            "owl:versionInfo": "1",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/O005/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/O010/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/FLUO/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SEDFLUX/"
+                }
+            ],
+            "dc:date": "2005-03-10 14:31:52.0",
+            "skos:altLabel": "Cross-discipline",
+            "skos:notation": "SDN:P08::DS06"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS04/",
+            "pav:authoredOn": "2005-03-10 14:31:52.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS04/1/"
+            },
+            "dce:identifier": "SDN:P08::DS04",
+            "pav:version": "1",
+            "owl:sameAs": {
+                "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/GEOL/"
+            },
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS04",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "skos:altLabel": "Marine geology",
+            "dc:date": "2005-03-10 14:31:52.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G71/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SEISM/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G90/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G75/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G72/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G28/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/BATHY/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G24/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G01/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/GTHM/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/GMAR/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SHORE/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G27/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SUSPMA/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G03/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G74/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G012/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/UWPH/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G73/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G04/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G060/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/GSED/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G26/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G050/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G08/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G02/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G005/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/GPYS/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G045/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/G76/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G040/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G055/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G015/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/TURBID/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G030/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:related": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H003/"
+            },
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The marine geological science domain"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS04",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Marine geology"
+            },
+            "owl:versionInfo": "1"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS10/",
+            "pav:hasVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS10/1/"
+            },
+            "pav:authoredOn": "2016-11-07 12:18:25.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS10/2/"
+            },
+            "dce:identifier": "SDN:P08::DS10",
+            "pav:version": "2",
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS10",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "skos:altLabel": "Environment",
+            "dc:date": "2016-11-07 12:18:25.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/P05/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/P13/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/P04/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/P90/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/P01/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/P12/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/P03/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/P02/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/BENTHA/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H002/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H001/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B050/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/CONT/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/MANG/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:related": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H005/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H003/"
+                }
+            ],
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The domain documenting the habitat (physical, biological or chemical conditions) surrounding an organism or a group of organisms, or factors affecting any part of the earth ecosystem past and present."
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS10",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Environment"
+            },
+            "owl:versionInfo": "2"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS03/",
+            "pav:authoredOn": "2005-03-10 14:31:52.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS03/1/"
+            },
+            "dce:identifier": "SDN:P08::DS03",
+            "pav:version": "1",
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS03",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "skos:altLabel": "Physical oceanography",
+            "dc:date": "2005-03-10 14:31:52.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H16/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D01/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/CURR/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/TRANST/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H17/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D04/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/ACOUST/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D03/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/HEATCON/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H73/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/WAVES/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D90/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H13/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D05/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/TIDES/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SEALVL/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D09/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/D032/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/D020/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D72/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/COLOUR/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/D034/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/D005/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D06/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/D71/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H72/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H71/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H10/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H11/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/D015/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/TURBID/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/D025/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SEATEMP/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/D030/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SAL/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/RADFLX/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/H09/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:related": {
+                "@id": "http://www.bbc.co.uk/programmes/b0074mjc"
+            },
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The physical oceanographic science domain"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS03",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Physical oceanography"
+            },
+            "owl:versionInfo": "1"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS01/",
+            "pav:authoredOn": "2005-03-10 14:31:52.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS01/1/"
+            },
+            "dce:identifier": "SDN:P08::DS01",
+            "pav:version": "1",
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS01",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "skos:altLabel": "Biological oceanography",
+            "dc:date": "2005-03-10 14:31:52.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/ZOO/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B14/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B09/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B28/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B06/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B03/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/PATHOGEN/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B90/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/MACALG/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B07/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B26/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B060/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B73/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B13/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B08/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B72/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/MTBM/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B37/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B02/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B21/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B10/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B11/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/SGRAS/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B16/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B25/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B01/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B20/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B71/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/UWPH/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/PIGM/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/BIOINFO/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/INVER/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B025/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/PHYTO/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B030/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B19/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B18/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B17/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/FISH/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B007/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B005/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B027/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B020/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B055/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G055/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B045/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B070/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B015/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:related": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B050/"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b00818zy"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b0074mn1"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b0074mmc"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b008535y"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b0080pjz"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b0074mjc"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b0074mlf"
+                }
+            ],
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The biological oceanographic science domain"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS01",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Biological oceanography"
+            },
+            "owl:versionInfo": "1"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS08/",
+            "pav:authoredOn": "2006-08-09 09:53:32.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS08/1/"
+            },
+            "dce:identifier": "SDN:P08::DS08",
+            "pav:version": "1",
+            "owl:sameAs": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P03/current/T001/"
+            },
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS08",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "skos:altLabel": "Terrestrial",
+            "dc:date": "2006-08-09 09:53:32.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G060/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G040/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G055/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G030/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/G045/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:related": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B050/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H003/"
+                }
+            ],
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The terrestrial science domain"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS08",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Terrestrial"
+            },
+            "owl:versionInfo": "1"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS05/",
+            "pav:authoredOn": "2005-03-10 14:31:52.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS05/1/"
+            },
+            "dce:identifier": "SDN:P08::DS05",
+            "pav:version": "1",
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS05",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "skos:altLabel": "Atmosphere",
+            "dc:date": "2005-03-10 14:31:52.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/HUMI/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/M71/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/RAIN/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/AIRTEMP/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/AIRPRES/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/WIND/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/M06/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/M90/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/M02/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/M010/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/AERO/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/RADFLX/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/M01/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/M05/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/M005/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/DENS/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The atmospheric sciences domain"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS05",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Atmosphere"
+            },
+            "owl:versionInfo": "1"
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS12/",
+            "pav:authoredOn": "2016-11-07 12:18:27.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS12/1/"
+            },
+            "dce:identifier": "SDN:P08::DS12",
+            "pav:version": "1",
+            "owl:sameAs": {
+                "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/HUMACT/"
+            },
+            "skos:notation": "SDN:P08::DS12",
+            "skos:altLabel": "Human activities",
+            "dc:date": "2016-11-07 12:18:27.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H014/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H006/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H009/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H015/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H013/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H012/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H010/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H008/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H011/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H016/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H002/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H001/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H004/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H005/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H007/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/CONT/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:related": {
+                "@id": "http://www.bbc.co.uk/programmes/b008535y"
+            },
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The domain documenting the activities of man that have an effect on the Earth System."
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "false",
+            "skos:note": {
+                "@language": "en",
+                "@value": "accepted"
+            },
+            "dc:identifier": "SDN:P08::DS12",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Human activities"
+            },
+            "owl:versionInfo": "1",
+            "dc:replaces": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS11/"
+            }
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS11/",
+            "pav:hasVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS11/1/"
+            },
+            "pav:authoredOn": "2017-02-02 14:38:40.0",
+            "pav:hasCurrentVersion": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS11/2/"
+            },
+            "dce:identifier": "SDN:P08::DS11",
+            "pav:version": "2",
+            "skos:broader": {
+                "@id": "http://vocab.nerc.ac.uk/collection/L19/current/001/"
+            },
+            "skos:notation": "SDN:P08::DS11",
+            "skos:inScheme": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/"
+                }
+            ],
+            "skos:altLabel": "Fisheries and aquaculture",
+            "dc:date": "2017-02-02 14:38:40.0",
+            "skos:narrower": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/W01/current/035/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B020/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/H004/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/OD1/current/FISH/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B65/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/C77/current/B64/"
+                }
+            ],
+            "@type": "skos:Concept",
+            "skos:related": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P03/current/B050/"
+                },
+                {
+                    "@id": "http://www.bbc.co.uk/programmes/b0074mn1"
+                }
+            ],
+            "skos:definition": {
+                "@language": "en",
+                "@value": "The science domain concerned with aquatic life taken from the wild or farmed for human consumption"
+            },
+            "void:inDataset": {
+                "@id": "http://vocab.nerc.ac.uk/.well-known/void"
+            },
+            "owl:deprecated": "true",
+            "skos:note": {
+                "@language": "en",
+                "@value": "deprecated"
+            },
+            "dc:identifier": "SDN:P08::DS11",
+            "skos:prefLabel": {
+                "@language": "en",
+                "@value": "Fisheries and aquaculture"
+            },
+            "owl:versionInfo": "2",
+            "dc:isReplacedBy": {
+                "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS12/"
+            }
+        },
+        {
+            "@id": "http://vocab.nerc.ac.uk/collection/P08/current/",
+            "skos:member": [
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS02/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS07/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS09/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS06/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS04/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS10/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS03/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS01/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS08/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS05/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS12/"
+                },
+                {
+                    "@id": "http://vocab.nerc.ac.uk/collection/P08/current/DS11/"
+                }
+            ],
+            "@type": "skos:Collection",
+            "dc:publisher": "Natural Environment Research Council",
+            "dc:description": "Terms used to classify SeaDataNet Agreed Parameter Groups to provide topic/theme level terms in a hierarchical parameter discovery interface.",
+            "dc:title": "SeaDataNet Parameter Disciplines",
+            "skos:prefLabel": "SeaDataNet Parameter Disciplines",
+            "owl:versionInfo": "5",
+            "dc:date": "2017-02-03 02:00:03.0",
+            "skos:altLabel": "SeaDataNet Disciplines",
+            "dc:creator": "SeaDataNet",
+            "dc:alternative": "SeaDataNet Disciplines",
+            "rdfs:comment": "Governance for vocabularies used in the EU SeaDataNet project implemented as consultation between BODC and the members of the SeaDataNet Technical Task Team",
+            "grg:RE_RegisterOwner": "SeaDataNet",
+            "grg:RE_RegisterManager": "British Oceanographic Data Centre",
+            "dc:license": {
+                "@id": "https://creativecommons.org/licenses/by/4.0/"
+            },
+            "rdfs:seeAlso": {
+                "@id": "https://github.com/nvs-vocabs/P08"
+            }
+        }
+    ],
+    "@context": {
+        "cpm": "http://purl.org/voc/cpm#",
+        "qudt": "https://qudt.org/2.1/schema/qudt#",
+        "void": "http://rdfs.org/ns/void#",
+        "pav": "http://purl.org/pav/",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "dce": "http://purl.org/dc/elements/1.1/",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "ns0": "http://www.w3.org/ns/dx/conneg/altr#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "iop": "https://w3id.org/iadopt/ont#",
+        "ns1": "http://www.w3.org/ns/dx/prof/",
+        "puv": "https://w3id.org/env/puv#",
+        "semapv": "http://w3id.org/semapv/vocab/",
+        "dct": "http://purl.org/dc/terms/",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "reg": "http://purl.org/linked-data/registry#",
+        "sssom": "https://w3id.org/sssom/schema/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "grg": "http://www.isotc211.org/schemas/grg/",
+        "prov": "https://www.w3.org/ns/prov#",
+        "dc": "http://purl.org/dc/terms/"
+    }
+}

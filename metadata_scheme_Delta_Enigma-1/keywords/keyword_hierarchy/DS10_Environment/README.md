@@ -1,0 +1,9 @@
+# Environment (DS10)
+
+**Definition:** The domain documenting the habitat (physical, biological or chemical conditions) surrounding an organism or a group of organisms, or factors affecting any part of the earth ecosystem past and present.
+
+## P03 Keywords in this category:
+
+- **Habitat** (B050): Grouping of parameters that characterise, spatially define, label or classify places where organisms...
+- **Pollution** (H001): Parameters describing the abundance, nature and impact of material added to the environment by the a...
+- **Construction and structures** (H002): Parameters describing the nature and impact of coastal and offshore man-made objects and the process...

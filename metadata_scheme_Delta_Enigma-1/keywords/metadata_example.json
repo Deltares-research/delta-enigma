@@ -1,0 +1,103 @@
+{
+    "links": [
+        {
+            "rel": "describedby", 
+            "href": "https://yoda.surf.nl/schemas/delta-enigma-1/metadata.json"
+        }
+    ], 
+    "Description": "[Summarize the data collection process and the data content]", 
+    "Documentation": [
+        {}
+    ], 
+    "Domain": [
+        "Bathymetry"
+    ], 
+    "Topic_Category": [
+        "Geoscientific Information"
+    ], 
+    "Version": "1.0", 
+    "Language": "en - English", 
+    "Temporal_Coverage": {
+        "Start_Date": "2025-02-19", 
+        "End_Date": "2025-02-20"
+    }, 
+    "Geographical_Coverage": [
+        {
+            "Reference_System": "WGS84", 
+            "geoLocationBox": {
+                "northBoundLatitude": 52.61915208081608, 
+                "westBoundLongitude": 4.619035696145405, 
+                "southBoundLatitude": 52.61915208081608, 
+                "eastBoundLongitude": 4.619035696145405
+            }, 
+            "Description_Spatial": "Egmond"
+        }
+    ], 
+    "Acquisition_Sensor": [
+        "Water sampler"
+    ], 
+    "Keyword": [
+        "Water sampler"
+    ], 
+    "Related_Resource": [
+        {}
+    ], 
+    "Funding_Reference": [
+        {}
+    ], 
+    "Resource_Type": "Dataset", 
+    "Creator": [
+        {
+            "Name": {
+                "Given_Name": "Vincent ", 
+                "Family_Name": "Brunst"
+            }, 
+            "Affiliation": [
+                {
+                    "Affiliation_Name": "Utrecht University", 
+                    "Affiliation_Identifier": "https://ror.org/04pp8hn57"
+                }
+            ], 
+            "Person_Identifier": [
+                {}
+            ]
+        }
+    ], 
+    "Contributor": [
+        {
+            "Affiliation": [
+                {}
+            ], 
+            "Person_Identifier": [
+                {}
+            ], 
+            "Name": {
+                "Given_Name": "Vincent", 
+                "Family_Name": "Brunst"
+            }
+        }
+    ], 
+    "Contact_Point": [
+        {
+            "Name": {
+                "Given_Name": "Vincent ", 
+                "Family_Name": "Brunst"
+            }, 
+            "Affiliation": [
+                {
+                    "Affiliation_Name": "Utrecht University", 
+                    "Affiliation_Identifier": "https://ror.org/04pp8hn57"
+                }
+            ], 
+            "Person_Identifier": [
+                {}
+            ]
+        }
+    ], 
+    "License_Document": "Creative Commons Attribution 4.0 International Public License (CC-BY)", 
+    "Access_Rights": "Publicly accessible", 
+    "Title": "Water sampler 1 - Egmond", 
+    "Work_Package": "WP1. Sustained high-resolution field observations in rivers", 
+    "Creation_Date": "2025-02-19", 
+    "Release_Date": "2025-02-28"
+}

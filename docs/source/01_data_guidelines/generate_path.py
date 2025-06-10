@@ -15,7 +15,6 @@ def get_user_input(prompt: str, default: Optional[str] = None) -> str:
 def generate_filepath(
     institution: str,
     work_package: str,
-    project: str,
     location: str,
     sensor_type: str,
     sensor_number: int,
@@ -29,7 +28,6 @@ def generate_filepath(
     Args:
         institution (str): Institution code (e.g., 'uu')
         work_package (str): Work package identifier (e.g., 'WP3')
-        project (str): Project name (e.g., 'project-x')
         location (str): Location name (e.g., 'zandmotor')
         sensor_type (str): Type of sensor (e.g., 'camera')
         sensor_number (int): Sensor identifier number (e.g., 1)
@@ -55,7 +53,6 @@ def generate_filepath(
         'Research',
         f'research-{institution}',
         work_package,
-        project,
         location,
         data_type,
         sensor_type,
@@ -81,7 +78,6 @@ def main():
         # Get user input with sensible defaults
         institution = get_user_input("Institution code", "uu")
         work_package = get_user_input("Work package", "WP3")
-        project = get_user_input("Project name", "project-x")
         location = get_user_input("Location", "zandmotor")
         sensor_type = get_user_input("Sensor type", "camera")
         sensor_number = int(get_user_input("Sensor number", "1"))
@@ -101,7 +97,6 @@ def main():
         filepath, filename = generate_filepath(
             institution=institution,
             work_package=work_package,
-            project=project,
             location=location,
             sensor_type=sensor_type,
             sensor_number=sensor_number,
@@ -125,11 +120,10 @@ def main():
                 print(f"\nError creating directory structure: {e}")
     else:
         # Example usage
-        date = datetime.datetime(2025, 5, 26)  # May 26, 2025
+        date = datetime.datetime(2024, 5, 26)  # May 26, 2024
         filepath, filename = generate_filepath(
             institution='uu',
             work_package='WP3',
-            project='project-x',
             location='zandmotor',
             sensor_type='camera',
             sensor_number=1,

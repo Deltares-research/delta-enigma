@@ -1,0 +1,9 @@
+services:
+  commands:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image:
+      name: ub20icommands
+      build:
+        context: .

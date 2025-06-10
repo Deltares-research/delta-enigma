@@ -1,0 +1,177 @@
+[
+  {
+    "notation": "SDN:P08::DS02",
+    "prefLabel": "Chemical oceanography",
+    "definition": "The chemical oceanographic science domain",
+    "p03_narrower": [
+      "C020",
+      "C050",
+      "C017",
+      "C010",
+      "C055",
+      "C030",
+      "C035",
+      "C045",
+      "C025",
+      "C040",
+      "C003",
+      "C005",
+      "B007",
+      "C015"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS07",
+    "prefLabel": "Administration and dimensions",
+    "definition": "Parameters related to spatial and temporal co-ordinates, entity referencing (eg record numbering and keys) and access control",
+    "p03_narrower": [],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS09",
+    "prefLabel": "Cryosphere",
+    "definition": "The cryosphere science domain, including ice on both land and sea",
+    "p03_narrower": [],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS06",
+    "prefLabel": "Cross-discipline",
+    "definition": "No specific association with an identified domain",
+    "p03_narrower": [
+      "O005",
+      "O010"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS04",
+    "prefLabel": "Marine geology",
+    "definition": "The marine geological science domain",
+    "p03_narrower": [
+      "GTHM",
+      "GMAR",
+      "G012",
+      "UWPH",
+      "G060",
+      "GSED",
+      "G050",
+      "G005",
+      "GPYS",
+      "G045",
+      "G040",
+      "G055",
+      "G015",
+      "G035",
+      "G030"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS10",
+    "prefLabel": "Environment",
+    "definition": "The domain documenting the habitat (physical, biological or chemical conditions) surrounding an organism or a group of organisms, or factors affecting any part of the earth ecosystem past and present.",
+    "p03_narrower": [
+      "http://vocab.nerc.ac.uk/collection/C77/current/P03/",
+      "H002",
+      "H001",
+      "B050"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS03",
+    "prefLabel": "Physical oceanography",
+    "definition": "The physical oceanographic science domain",
+    "p03_narrower": [
+      "D032",
+      "D020",
+      "D034",
+      "D005",
+      "D015",
+      "D025",
+      "D030"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS01",
+    "prefLabel": "Biological oceanography",
+    "definition": "The biological oceanographic science domain",
+    "p03_narrower": [
+      "B060",
+      "UWPH",
+      "B025",
+      "B035",
+      "B030",
+      "B007",
+      "B005",
+      "B027",
+      "B020",
+      "B055",
+      "G055",
+      "B045",
+      "B070",
+      "B015"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS08",
+    "prefLabel": "Terrestrial",
+    "definition": "The terrestrial science domain",
+    "p03_narrower": [
+      "G060",
+      "G040",
+      "G055",
+      "G035",
+      "G030",
+      "G045"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS05",
+    "prefLabel": "Atmosphere",
+    "definition": "The atmospheric sciences domain",
+    "p03_narrower": [
+      "M010",
+      "M005"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS12",
+    "prefLabel": "Human activities",
+    "definition": "The domain documenting the activities of man that have an effect on the Earth System.",
+    "p03_narrower": [
+      "H014",
+      "H006",
+      "H009",
+      "H015",
+      "H013",
+      "H012",
+      "H010",
+      "H008",
+      "H011",
+      "H016",
+      "H002",
+      "H001",
+      "H004",
+      "H005",
+      "H007"
+    ],
+    "deprecated": false
+  },
+  {
+    "notation": "SDN:P08::DS11",
+    "prefLabel": "Fisheries and aquaculture",
+    "definition": "The science domain concerned with aquatic life taken from the wild or farmed for human consumption",
+    "p03_narrower": [
+      "B020",
+      "H004"
+    ],
+    "deprecated": true
+  }
+]
