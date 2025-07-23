@@ -43,6 +43,7 @@ If you need guidance on data cleaning requirements or best practices, *contact y
 
 02_actions/01_upload_data
 02_actions/02_add_metadata
+02_actions/04_process_data
 02_actions/03_publish_data
 
 ```
