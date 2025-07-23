@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Folder Structure &#8212; Delta Enigma Data Management Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=796a1f2c" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_data_guidelines/03_folder_structure';</script>
+    <link rel="icon" href="../_static/DE-favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vocabularies" href="04_vocabularies.html" />
+    <link rel="prev" title="Metadata Standard" href="02_metadata_standards.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo_Delta-ENIGMA.png" class="logo__image only-light" alt="Delta Enigma Data Management Handbook - Home"/>
+    <img src="../_static/logo_Delta-ENIGMA.png" class="logo__image only-dark pst-js-only" alt="Delta Enigma Data Management Handbook - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Delta Enigma Data Management Handbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Management Guidelines</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_data_collection.html">Data Collection Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_metadata_standards.html">Metadata Standard</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Folder Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_vocabularies.html">Vocabularies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_example_metadata_per_sensor.html">Example Metadata per Sensor</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Actions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02_actions/01_upload_data.html">Uploading Data to Yoda (SURF)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_actions/02_add_metadata.html">Adding Metadata in Yoda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_actions/04_process_data.html">Processing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_actions/03_publish_data.html">Publishing Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">General information</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03_general_info/01_sensors.html">All sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_general_info/02_data_stewards.html">Data Stewards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_general_info/03_locations.html">Study Locations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/Deltares-research/delta-enigma.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01_data_guidelines/03_folder_structure.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Folder Structure</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-path-generator">Interactive Path Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure-details">Folder Structure Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-path-example">Complete Path Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchy-levels">Hierarchy Levels</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-convention">File Naming Convention</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern">Pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-options">Implementation Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-tool">Web Tool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-script">Python Script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="folder-structure">
+<h1>Folder Structure<a class="headerlink" href="#folder-structure" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This document outlines the standardized folder structure for sensor data storage within the iRODS data platform. The structure is designed to organize research data hierarchically, from institutional level down to individual data files, ensuring consistent and clear organization across all research projects.</p>
+</section>
+<section id="interactive-path-generator">
+<h2>Interactive Path Generator<a class="headerlink" href="#interactive-path-generator" title="Link to this heading">#</a></h2>
+<p>Use our interactive tool to generate standardized file paths and folder structures for your data:</p>
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; line-height: 1.6;">
+    <h2>Delta Enigma Path Generator</h2>
+    <p>Use this tool to generate standardized file paths and folder structures for your data.</p>
+
+    <form id="pathForm" style="margin-bottom: 20px;">
+        <div style="margin-bottom: 15px;">
+            <label for="institution" style="display: block; margin-bottom: 5px; font-weight: bold;">Institution code:</label>
+            <input type="text" id="institution" value="uu" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="workPackage" style="display: block; margin-bottom: 5px; font-weight: bold;">Work package:</label>
+            <input type="text" id="workPackage" value="WP3" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="location" style="display: block; margin-bottom: 5px; font-weight: bold;">Location:</label>
+            <input type="text" id="location" value="zandmotor" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="sensorType" style="display: block; margin-bottom: 5px; font-weight: bold;">Sensor type:</label>
+            <input type="text" id="sensorType" value="camera" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="sensorNumber" style="display: block; margin-bottom: 5px; font-weight: bold;">Sensor number:</label>
+            <input type="number" id="sensorNumber" value="1" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="dataType" style="display: block; margin-bottom: 5px; font-weight: bold;">Data type:</label>
+            <select id="dataType" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                <option value="raw-data">raw-data</option>
+                <option value="processed-data">processed-data</option>
+                <option value="published-data">published-data</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="extension" style="display: block; margin-bottom: 5px; font-weight: bold;">File extension:</label>
+            <input type="text" id="extension" value="jpg" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label for="date" style="display: block; margin-bottom: 5px; font-weight: bold;">Date:</label>
+            <input type="date" id="date" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+        </div>
+
+        <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Generate Path</button>
+    </form>
+
+    <div id="result" style="margin-top: 20px; padding: 15px; background-color: #f5f5f5; border-radius: 4px; white-space: pre-wrap; display: none;">
+        <h3>Generated Path Information</h3>
+        <div id="pathOutput"></div>
+    </div>
+
+    <script>
+        // Set default date to today
+        document.getElementById('date').valueAsDate = new Date();
+
+        document.getElementById('pathForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const institution = document.getElementById('institution').value;
+            const workPackage = document.getElementById('workPackage').value;
+            const location = document.getElementById('location').value;
+            const sensorType = document.getElementById('sensorType').value;
+            const sensorNumber = document.getElementById('sensorNumber').value;
+            const dataType = document.getElementById('dataType').value;
+            const extension = document.getElementById('extension').value;
+            const date = new Date(document.getElementById('date').value);
+
+            // Format date components
+            const month = date.toLocaleString('default', { month: 'short' });
+            const day = date.getDate();
+            const year = date.getFullYear();
+
+            // Generate path components
+            const pathParts = [
+                'Research',
+                `research-${institution}`,
+                workPackage,
+                location,
+                dataType,
+                sensorType,
+                `${sensorType}${sensorNumber}`,
+                year.toString(),
+                `${month}.${day}`
+            ];
+
+            // Generate filename components
+            const filenameParts = [
+                `${month}.${day}.${year}`,
+                location,
+                `${sensorType}${sensorNumber}`,
+                dataType,
+                extension
+            ];
+
+            // Create full path and filename
+            const filepath = pathParts.join('/');
+            const filename = filenameParts.join('.');
+            const completePath = `${filepath}/${filename}`;
+
+            // Display results
+            const resultDiv = document.getElementById('result');
+            const pathOutput = document.getElementById('pathOutput');
+            pathOutput.innerHTML = `Full path: ${filepath}\nFilename: ${filename}\nComplete path: ${completePath}`;
+            resultDiv.style.display = 'block';
+        });
+    </script>
+</div></section>
+<section id="folder-structure-details">
+<h2>Folder Structure Details<a class="headerlink" href="#folder-structure-details" title="Link to this heading">#</a></h2>
+<section id="complete-path-example">
+<h3>Complete Path Example<a class="headerlink" href="#complete-path-example" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Research/
+└── research-uu/
+    └── WP3/
+          └── zandmotor/
+              └── raw-data/
+                  └── camera/
+                      └── camera1/
+                          └── 2024/
+                              └── May.26/
+                                  └── May.26.2024.zandmotor.camera1.raw-data.jpg
+</pre></div>
+</div>
+</section>
+<section id="hierarchy-levels">
+<h3>Hierarchy Levels<a class="headerlink" href="#hierarchy-levels" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Root Level</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Research/</span></code>: Top-level directory for all research data</p></li>
+</ul>
+</li>
+<li><p><strong>Institution Level</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">research-uu/</span></code>: Institution-specific directory</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">research-{institution-code}</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Work Package Level</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">WP3/</span></code>: Work package identifier</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">WP{number}</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Location Level</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zandmotor/</span></code>: Geographic or site-specific location</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">{location-name}</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Data Classification</strong></p>
+<ul class="simple">
+<li><p>Distinguishes between different data processing stages</p></li>
+<li><p>Available categories:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw-data/</span></code>: Unprocessed data directly from sensors</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processed-data/</span></code>: Data that has undergone processing or analysis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">published-data/</span></code>: Final, published versions of datasets</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Sensor Type</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">camera/</span></code>: Type of sensor or data collection device</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">{sensor-type}</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Device Instance</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">camera1/</span></code>: Specific device identifier</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">{sensor-type}{number}</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Temporal Organization</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2024/</span></code>: Year</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">147_May.26/</span></code>: Day folder</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">{day_of_year}_{month}.{day}</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="file-naming-convention">
+<h2>File Naming Convention<a class="headerlink" href="#file-naming-convention" title="Link to this heading">#</a></h2>
+<section id="pattern">
+<h3>Pattern<a class="headerlink" href="#pattern" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">{unix_timestamp}.{human_readable_datetime}.{location}.{device_id}.{data_type}.{extension}</span></code></p>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">1716706803.Sun.May.26_07_00_03.UTC.2024.zandmotor.camera1.raw-data.jpg</span></code></p>
+</section>
+<section id="components">
+<h3>Components<a class="headerlink" href="#components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1716706803</span></code>: Unix timestamp</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sun.May.26_07_00_03.UTC.2024</span></code>: Human readable date and time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zandmotor</span></code>: Location identifier (lowercase)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">camera1</span></code>: Device identifier (sensor type + number)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw-data</span></code>: Processing stage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jpg</span></code>: File extension (lowercase)</p></li>
+</ul>
+</section>
+</section>
+<section id="implementation-options">
+<h2>Implementation Options<a class="headerlink" href="#implementation-options" title="Link to this heading">#</a></h2>
+<section id="web-tool">
+<h3>Web Tool<a class="headerlink" href="#web-tool" title="Link to this heading">#</a></h3>
+<p>The interactive web tool (shown above) provides the easiest way to generate paths and filenames. It’s ideal for:</p>
+<ul class="simple">
+<li><p>Quick path generation</p></li>
+<li><p>Interactive exploration of the structure</p></li>
+<li><p>Immediate feedback on generated paths</p></li>
+</ul>
+</section>
+<section id="python-script">
+<h3>Python Script<a class="headerlink" href="#python-script" title="Link to this heading">#</a></h3>
+<p>For programmatic or command-line usage, a Python script is available:</p>
+<ol class="arabic">
+<li><p>Download: <a class="reference download internal" download="" href="../_downloads/1d729c8904ef1881817e7d0fc4cc8570/generate_path.py"><span class="xref download myst">generate_path.py</span></a></p></li>
+<li><p>Run in interactive mode:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>generate_path.py<span class="w"> </span>--interactive
+</pre></div>
+</div>
+</li>
+<li><p>Follow the prompts to enter your data</p></li>
+</ol>
+<p>Features:</p>
+<ul class="simple">
+<li><p>Interactive prompts with sensible defaults</p></li>
+<li><p>Date validation</p></li>
+<li><p>Option to create directory structure</p></li>
+<li><p>Both interactive and non-interactive modes</p></li>
+<li><p>Clear output of generated paths and filenames</p></li>
+</ul>
+</section>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Folder Names</strong></p>
+<ul class="simple">
+<li><p>Use lowercase letters</p></li>
+<li><p>Use hyphens for spaces</p></li>
+<li><p>Follow the hierarchical structure strictly</p></li>
+</ul>
+</li>
+<li><p><strong>File Names</strong></p>
+<ul class="simple">
+<li><p>Include all required components</p></li>
+<li><p>Use consistent formatting</p></li>
+<li><p>Follow the established pattern</p></li>
+</ul>
+</li>
+<li><p><strong>Data Organization</strong></p>
+<ul class="simple">
+<li><p>Keep raw data separate from processed data</p></li>
+<li><p>Use appropriate data classification</p></li>
+<li><p>Maintain consistent temporal organization</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_metadata_standards.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Metadata Standard</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04_vocabularies.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vocabularies</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-path-generator">Interactive Path Generator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure-details">Folder Structure Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-path-example">Complete Path Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchy-levels">Hierarchy Levels</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-naming-convention">File Naming Convention</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pattern">Pattern</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation-options">Implementation Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-tool">Web Tool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-script">Python Script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jelle van Miltenburg
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025, Delta Enigma.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
