@@ -1,0 +1,15 @@
+{
+    "irods_authentication_scheme": "pam",
+    "irods_client_server_negotiation": "request_server_negotiation",
+    "irods_client_server_policy": "CS_NEG_REQUIRE",
+    "irods_host": "deltaenigma-data.irods.surfsara.nl",
+    "irods_home": "/deltaenigma/home",
+    "irods_default_resource": "irodsResc",
+    "irods_encryption_algorithm": "AES-256-CBC",
+    "irods_encryption_key_size": 32,
+    "irods_encryption_num_hash_rounds": 16,
+    "irods_encryption_salt_size": 8,
+    "irods_port": 1247,
+    "irods_zone_name": "deltaenigma",
+    "irods_user_name": "jelle.vanmiltenburg@deltares.nl"
+  }
