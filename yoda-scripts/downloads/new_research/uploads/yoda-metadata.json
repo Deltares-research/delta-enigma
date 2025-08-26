@@ -1,0 +1,100 @@
+{
+    "links": [
+        {
+            "rel": "describedby", 
+            "href": "https://yoda.surf.nl/schemas/delta-enigma-1/metadata.json"
+        }
+    ], 
+    "Title": "Test-title", 
+    "Description": "[Summarize the data collection process and the data content]", 
+    "Documentation": [
+        {
+            "Title_document": "Title-of-document", 
+            "Link_document": "link.to.document"
+        }
+    ], 
+    "Domain": [
+        "Marine geology"
+    ], 
+    "Topic_Category": [
+        "Marine geology>Geothermal measurements"
+    ], 
+    "Work_Package": "WP4. Observation of extreme events", 
+    "Version": "1.0", 
+    "Language": "en - English", 
+    "Temporal_Coverage": {
+        "Start_Date": "2025-06-02", 
+        "End_Date": "2025-09-11"
+    }, 
+    "Geographical_Coverage": [
+        {
+            "geoLocationBox": {
+                "northBoundLatitude": 52.033232002997536, 
+                "westBoundLongitude": 4.246215820312501, 
+                "southBoundLatitude": 52.033232002997536, 
+                "eastBoundLongitude": 4.246215820312501
+            }, 
+            "Description_Spatial": "Delft", 
+            "Reference_System": "WGS84"
+        }
+    ], 
+    "Acquisition_Sensor": [
+        "Camera observations"
+    ], 
+    "Keyword": [
+        "test-keyword"
+    ], 
+    "Related_Resource": [
+        {
+            "Relation_Type": "Documents", 
+            "Title": "Related-source", 
+            "Persistent_Identifier": {
+                "Identifier_Scheme": "DOI", 
+                "Identifier": "123DOI"
+            }
+        }
+    ], 
+    "Creation_Date": "2025-08-26", 
+    "Release_Date": "2025-09-17", 
+    "Applicable_Legislation": "Kaderrichtlijn Water", 
+    "Resource_Type": "Dataset", 
+    "Creator": [
+        {
+            "Name": {
+                "Given_Name": "Jelle ", 
+                "Family_Name": "de Fries"
+            }, 
+            "Email": "defries@email.com", 
+            "Affiliation": [
+                {
+                    "Affiliation_Name": "deltares", 
+                    "Affiliation_Identifier": "123ID"
+                }
+            ]
+        }
+    ], 
+    "Contributor": [
+        {
+            "Name": {
+                "Given_Name": "A.", 
+                "Family_Name": "Contributor"
+            }
+        }
+    ], 
+    "Contact_Point": [
+        {
+            "Name": {
+                "Given_Name": "D.", 
+                "Family_Name": "Steward"
+            }, 
+            "Affiliation": [
+                {
+                    "Affiliation_Name": "Deltares"
+                }
+            ]
+        }
+    ], 
+    "License_Document": "Creative Commons Attribution 4.0 International Public License (CC-BY)", 
+    "Access_Rights": "Publicly accessible", 
+    "Rights": "Use this data as you want"
+}
