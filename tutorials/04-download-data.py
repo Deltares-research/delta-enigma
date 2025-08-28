@@ -1,20 +1,17 @@
-# /// script
-# requires-python = ">=3.13"
-# dependencies = [
-#     "ibridges>=1.5.1",
-# ]
-# ///
-#%%
+# %% [markdown]
+# ### Let's start by initializing the session
 
+# %%
 from ibridges.interactive import interactive_auth
 session = interactive_auth() 
-import warnings
-warnings.filterwarnings('ignore')
 # Note that at this point we are still using local machine, not Yoda (yet)
 # make sure that you have a correct 'irods_environment.json' file in the .irods folder of your home directory
 
-# %%
+
+# %% [markdown]
 # ### Check the session parameters
+
+# %%
 print(session.username)
 print(session.default_resc) # the resource to which data will be uploaded
 print(session.zone)
@@ -22,43 +19,25 @@ print(session.server_version)
 print(session.get_user_info()) # lists user type and groups
 print(session.home) # 
 
+# %% [markdown]
+# 
 
 # %%
-from ibridges.path import IrodsPath
+from ibridges import IrodsPath
 from pathlib import Path
 
 home = IrodsPath(session, '~/research-deltares/WP1/test')
 irods_path = IrodsPath(session, home, 'new_research')
-irods_col_path = irods_path / 'uploads'
-irods_obj_path = irods_col_path / 'test.txt'
-print("Current working location:", irods_path)
-print("Demo collection name:", irods_col_path, "exists: ", irods_col_path.collection_exists())
-print("Demo object name:", irods_obj_path, "exists: ", irods_obj_path.dataobject_exists())
-
-
-
+print(home)
+print(irods_path)
 
 # %% [markdown]
-# ### What is the current metadata associated with the data object?
-
-# %%
-irods_obj_path.meta
-
-# %%
-print(irods_obj_path.meta)
-obj_meta = irods_obj_path.meta
-obj_meta.add('Key', 'Value', 'Units')
-print(type(obj_meta))
-
-
-
-# %% [markdown]
-# ## Add metadata
+# # Download file
 
 # %%
 # more info: https://ibridges.readthedocs.io/en/latest/data_transfers.html#download
 from ibridges import download
 local_download_path = Path('downloads/')
-download(session, irods_path, local_download_path)
+download(session, irods_path, local_download_path, overwrite=True)
 
-
+# %%

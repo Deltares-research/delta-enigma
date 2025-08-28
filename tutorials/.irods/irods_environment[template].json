@@ -1,3 +1,5 @@
+
+
 {
     "irods_authentication_scheme": "pam",
     "irods_client_server_negotiation": "request_server_negotiation",
@@ -11,5 +13,6 @@
     "irods_encryption_salt_size": 8,
     "irods_port": 1247,
     "irods_zone_name": "deltaenigma",
-    "irods_user_name": "jelle.vanmiltenburg@deltares.nl"
+    "irods_user_name": "[YOUR USERNAME]"
   }
+
