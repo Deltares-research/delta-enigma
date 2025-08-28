@@ -1,0 +1,91 @@
+{
+    "links": [
+        {
+            "rel": "describedby", 
+            "href": "https://yoda.surf.nl/schemas/delta-enigma-1/metadata.json"
+        }
+    ], 
+    "Title": "titel", 
+    "Description": "[Summarize the data collection process and the data content]", 
+    "Documentation": [
+        {
+            "Title_document": "document titel", 
+            "Link_document": "linkje"
+        }
+    ], 
+    "Domain": [
+        "Environment"
+    ], 
+    "Topic_Category": [
+        "Environment>Habitat"
+    ], 
+    "Work_Package": "WP2. Sustained high-resolution field observations in estuaries", 
+    "Version": "1.0", 
+    "Language": "en - English", 
+    "Temporal_Coverage": {
+        "Start_Date": "2025-07-29", 
+        "End_Date": "2025-08-14"
+    }, 
+    "Geographical_Coverage": [
+        {
+            "geoLocationBox": {
+                "northBoundLatitude": 52.20491365416633, 
+                "westBoundLongitude": 4.79160338597124, 
+                "southBoundLatitude": 52.20491365416633, 
+                "eastBoundLongitude": 4.79160338597124
+            }, 
+            "Description_Spatial": "plekje", 
+            "Reference_System": "WGS84"
+        }
+    ], 
+    "Expedition": [
+        "UEX"
+    ], 
+    "Acquisition_Sensor": [
+        "Autonomuous ship"
+    ], 
+    "Keyword": [
+        "water", 
+        "zand"
+    ], 
+    "Creation_Date": "2025-08-28", 
+    "Release_Date": "2025-09-04", 
+    "Applicable_Legislation": "INSPIRE", 
+    "Resource_Type": "Dataset", 
+    "Creator": [
+        {
+            "Name": {
+                "Given_Name": "Jelle", 
+                "Family_Name": "vm"
+            }, 
+            "Affiliation": [
+                {
+                    "Affiliation_Name": "Deltares"
+                }
+            ]
+        }
+    ], 
+    "Contributor": [
+        {
+            "Name": {
+                "Given_Name": "Con", 
+                "Family_Name": "Tributor"
+            }
+        }
+    ], 
+    "Contact_Point": [
+        {
+            "Name": {
+                "Given_Name": "D.", 
+                "Family_Name": "Steward"
+            }, 
+            "Affiliation": [
+                {
+                    "Affiliation_Name": "Deltares"
+                }
+            ]
+        }
+    ], 
+    "License_Document": "Creative Commons Attribution 4.0 International Public License (CC-BY)", 
+    "Access_Rights": "Publicly accessible"
+}

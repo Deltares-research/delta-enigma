@@ -1,5 +1,4 @@
-# %% [markdown]
-# ### Let's start by initializing the session
+
 
 # %%
 from ibridges.interactive import interactive_auth
@@ -18,9 +17,6 @@ print(session.zone)
 print(session.server_version)
 print(session.get_user_info()) # lists user type and groups
 print(session.home) # 
-
-# %% [markdown]
-# 
 
 # %%
 from ibridges import IrodsPath

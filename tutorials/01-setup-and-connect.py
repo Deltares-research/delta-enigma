@@ -51,8 +51,6 @@ print("Demo collection name:", irods_col_path, "exists: ", irods_path.collection
 if irods_path.collection_exists() == False: # if the collection does not exist, create it
     IrodsPath.create_collection(session, irods_path)
 
-
-
 # %% [markdown]
 # Now we are ready to upload data. (see 02-upload-data.py)
 # %%
