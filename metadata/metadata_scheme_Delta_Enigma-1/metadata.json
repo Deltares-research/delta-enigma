@@ -781,7 +781,6 @@
     "links",
     "Title",
     "Description",
-	"Documentation",
 	"Domain",
     "Topic_Category",
     "Version",
@@ -789,7 +788,6 @@
     "Temporal_Coverage",
 	"Geographical_Coverage",
     "Acquisition_Sensor",
-    "Related_Resource",
 	"Creation_Date",
 	"Release_Date",
     "Resource_Type",
@@ -1067,8 +1065,7 @@
         "yoda:structure": "subproperties",
         "required": [
           "Name",
-          "Affiliation",
-          "Person_Identifier"
+          "Affiliation"
         ],
         "properties": {
           "Name": {

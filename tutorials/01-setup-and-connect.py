@@ -13,6 +13,7 @@
 
 # %%
 from ibridges.interactive import interactive_auth
+import irods
 session = interactive_auth() 
 # Note that at this point we are still using local machine, not Yoda (yet)
 # make sure that you have a correct 'irods_environment.json' file in the .irods folder of your home directory
@@ -45,11 +46,15 @@ sensor_type = 'camera'
 sensor_id = 'camera1'
 year = '2024'
 
-irods_path = IrodsPath(session, home, f'{data_quality}/{sensor_type}/{sensor_id}/{year}')
+irods_path = IrodsPath(session, home, f'{data_quality}/{sensor_type}/{sensor_id}')
 print("Current working location:", irods_path)
-print("Demo collection name:", irods_col_path, "exists: ", irods_path.collection_exists())
+new_collection = irods_path.joinpath(year)
+print("Demo collection name:", new_collection, "exists: ", irods_path.collection_exists())
 if irods_path.collection_exists() == False: # if the collection does not exist, create it
     IrodsPath.create_collection(session, irods_path)
+    print("Collection created")
+else:
+    print("Collection already exists")
 
 # %% [markdown]
 # Now we are ready to upload data. (see 02-upload-data.py)
