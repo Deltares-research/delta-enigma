@@ -13,7 +13,6 @@ def get_user_input(prompt: str, default: Optional[str] = None) -> str:
     return input(f"{prompt}: ").strip()
 
 def generate_filepath(
-    institution: str,
     work_package: str,
     location: str,
     sensor_type: str,
@@ -26,7 +25,6 @@ def generate_filepath(
     Generate a standardized filepath and filename from metadata.
     
     Args:
-        institution (str): Institution code (e.g., 'uu')
         work_package (str): Work package identifier (e.g., 'WP3')
         location (str): Location name (e.g., 'zandmotor')
         sensor_type (str): Type of sensor (e.g., 'camera')
@@ -51,7 +49,6 @@ def generate_filepath(
     # Generate path components
     path_parts = [
         'Research',
-        f'research-{institution}',
         work_package,
         location,
         data_type,
@@ -76,7 +73,6 @@ def main():
         print("Enter the following information (press Enter to use defaults):\n")
 
         # Get user input with sensible defaults
-        institution = get_user_input("Institution code", "uu")
         work_package = get_user_input("Work package", "WP3")
         location = get_user_input("Location", "zandmotor")
         sensor_type = get_user_input("Sensor type", "camera")
@@ -95,7 +91,6 @@ def main():
 
         # Generate and display results
         filepath, filename = generate_filepath(
-            institution=institution,
             work_package=work_package,
             location=location,
             sensor_type=sensor_type,
@@ -122,7 +117,6 @@ def main():
         # Example usage
         date = datetime.datetime(2024, 5, 26)  # May 26, 2024
         filepath, filename = generate_filepath(
-            institution='uu',
             work_package='WP3',
             location='zandmotor',
             sensor_type='camera',
