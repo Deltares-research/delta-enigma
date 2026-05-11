@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P08-P03 Keyword Hierarchy</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
+        }
+        h1 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 0;
+            padding: 15px 0;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .stats {
+            text-align: center;
+            margin: 0 10px 15px 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .category {
+            margin: 0 10px 15px 10px;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s ease;
+        }
+        .category:hover {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .category-header {
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #e9ecef;
+            transition: background-color 0.2s ease;
+        }
+        .category-header:hover {
+            background-color: #e9ecef;
+        }
+        .category-header.deprecated {
+            background-color: #fff5f5;
+        }
+        .category-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0;
+            color: #2c3e50;
+        }
+        .category-description {
+            margin: 5px 0 0;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        .category-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .category-content.active {
+            max-height: 2500px;
+            transition: max-height 0.5s ease-in;
+        }
+        .keyword {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+            transition: background-color 0.2s ease;
+        }
+        .keyword:hover {
+            background-color: #f8f9fa;
+        }
+        .keyword:last-child {
+            border-bottom: none;
+        }
+        .keyword.deprecated {
+            background-color: #fff5f5;
+        }
+        .keyword-title {
+            font-weight: 600;
+            margin: 0;
+            font-size: 0.95rem;
+            color: #2c3e50;
+        }
+        .keyword-id {
+            color: #6c757d;
+            font-size: 0.8rem;
+            margin: 3px 0 0;
+            font-family: monospace;
+        }
+        .keyword-definition {
+            margin: 5px 0 0;
+            font-size: 0.85rem;
+            color: #495057;
+        }
+        .deprecated-label {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            margin-left: 5px;
+            font-weight: normal;
+        }
+        .search-container {
+            margin: 0 10px 15px 10px;
+            text-align: center;
+        }
+        #searchInput {
+            padding: 10px 15px;
+            width: 90%;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        #searchInput:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+        }
+        .header-container {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            z-index: 10;
+            padding-top: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .expand-collapse-all {
+            text-align: center;
+            margin: 0 10px 15px 10px;
+        }
+        .btn {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background-color 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #e9ecef;
+        }
+        .count-badge {
+            display: inline-block;
+            background-color: #4299e1;
+            color: white;
+            border-radius: 10px;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>P08-P03 Keyword Hierarchy</h1>
+            
+            <div class="stats">
+                <p>Total P08 categories: <strong>12</strong> (1 deprecated) | Total P03 keywords: <strong>77</strong> (6 deprecated)</p>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search keywords or categories...">
+            </div>
+            
+            <div class="expand-collapse-all">
+                <button id="expandAllBtn" class="btn">Expand All</button>
+                <button id="collapseAllBtn" class="btn">Collapse All</button>
+            </div>
+        </div>
+        
+        <div id="hierarchy">
+
+            <div class="category" data-code="DS01">
+                <div class="category-header ">
+                    <h2 class="category-title">Biological oceanography (DS01) </h2>
+                    <p class="category-description">The biological oceanographic science domain</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="B005">
+                        <h3 class="keyword-title">Bacteria and viruses </h3>
+                        <p class="keyword-id">SDN:P03::B005</p>
+                        <p class="keyword-definition">This group incorporates all state variables pertaining to bacteria (Kingdom Monera)and viruses. Note that Monera includes both Phylum Bacteria and Phylum Cyanophycota (cyanobacteria but sometimes called blue-green algae).  Most parameters in this group express the abundance, either as cell counts or biomass, of various types of bacteria or viruses. However, the group also includes parameters that describe any other property of these entities that are  not rates or fluxes  . Examples include cell size, cell volume and the proportion of the population associated with the particulate phase.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B070">
+                        <h3 class="keyword-title">Biota abundance, biomass and diversity </h3>
+                        <p class="keyword-id">SDN:P03::B070</p>
+                        <p class="keyword-definition">All parameters of any dimensionality (per unit volume, area or simply counts) quantifying the numbers, mass or diversity (species variation) of biota in water bodies, sediment or the atmosphere.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B007">
+                        <h3 class="keyword-title">Biota composition </h3>
+                        <p class="keyword-id">SDN:P03::B007</p>
+                        <p class="keyword-definition">This group contains all parameters relating to the composition of organisms or their constituent parts. It may include any analytical measurements on biological material, but is specifically designed for heavy metal and organic contaminant biota pollution monitoring data.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B015">
+                        <h3 class="keyword-title">Birds, mammals and reptiles </h3>
+                        <p class="keyword-id">SDN:P03::B015</p>
+                        <p class="keyword-definition">This group incorporates all variables pertaining to birds, mammals and reptiles, including abundance, biomass, biological function and state of health.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B060">
+                        <h3 class="keyword-title">Disease, damage and mortality </h3>
+                        <p class="keyword-id">SDN:P03::B060</p>
+                        <p class="keyword-definition">Parameters pertaining to all types of diseases, infections, poisonings and physical damage in any type of biota.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B020">
+                        <h3 class="keyword-title">Fish </h3>
+                        <p class="keyword-id">SDN:P03::B020</p>
+                        <p class="keyword-definition">This group incorporates all state variables pertaining to fish, such as abundance, biomass and fisheries data.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B055">
+                        <h3 class="keyword-title">Macroalgae and seagrass </h3>
+                        <p class="keyword-id">SDN:P03::B055</p>
+                        <p class="keyword-definition">Parameters pertaining to plants in the taxonomic groups Rhodophycota, Chromphycota and Chlorophycota (seaweeds/macroalgae) and Charophyta plus Anthophyta (seagrass)</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B025">
+                        <h3 class="keyword-title">Microzooplankton </h3>
+                        <p class="keyword-id">SDN:P03::B025</p>
+                        <p class="keyword-definition">This group incorporates all state variables pertaining to microzooplankton, defined as heterotrophic organisms smaller than 200 microns in length. The term covers organisms sometimes referred to as picozooplankton or nanozooplankton.  Most parameters express the abundance, either as cell counts or biomass, of various types of microzooplankton, but may include other properties such as cell volume. Rates (including grazing parameters) and fluxes are not included here (see Rates and Fluxes APGs).</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B027">
+                        <h3 class="keyword-title">Other biological measurements </h3>
+                        <p class="keyword-id">SDN:P03::B027</p>
+                        <p class="keyword-definition">This is a 'safety net' category to cover biological parameters that cannot be mapped to other Agreed Parameter Groups. It should be regarded as a transitional grouping: if a significant number of related parameters map to this group then the creation of an additional group should be discussed and agreed.  The following parameters within the BODC Parameter Dictionary currently (May 2003) fall into this category.   Specimen length (mean and standard deviation)  Exuvia  Growth coefficient and standard error  Algal fragment abundance  Total plankton abundance  Pollen abundance  Fungal spore abundance  Transparent exopolymer particle abundance  Genetic parameters such as RuBisCO hybridisation</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B030">
+                        <h3 class="keyword-title">Phytoplankton and microphytobenthos </h3>
+                        <p class="keyword-id">SDN:P03::B030</p>
+                        <p class="keyword-definition">Parameters related to autotrophic organisms smaller than 200 microns that are free-floating in water bodies, live in sediment or on the seabed.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B035">
+                        <h3 class="keyword-title">Pigments </h3>
+                        <p class="keyword-id">SDN:P03::B035</p>
+                        <p class="keyword-definition">This group incorporates plant pigment concentration parameters and uncalibrated readings from instruments that make in-situ pigment measurements, such as fluorometer voltages.  The grouping includes measurements on pigments in the particulate phase of the water column (expressed as pigment mass per unit volume/mass of water), pigments in sediment (expressed as pigment mass per unit mass or volume of sediment) and zooplankton gut pigment contents (expressed as pigment mass per individual).</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G055">
+                        <h3 class="keyword-title">Rock and sediment biota </h3>
+                        <p class="keyword-id">SDN:P03::G055</p>
+                        <p class="keyword-definition">Parameters pertaining to flora, fauna and their fossil remains in rocks and unlithified sediment. Includes zoobenthos, phytobenthos and palaeontology.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="UWPH">
+                        <h3 class="keyword-title">Underwater photography </h3>
+                        <p class="keyword-id">SDN:P03::UWPH</p>
+                        <p class="keyword-definition">Still or video digital images taken below the surface of the water column</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B045">
+                        <h3 class="keyword-title">Zooplankton </h3>
+                        <p class="keyword-id">SDN:P03::B045</p>
+                        <p class="keyword-definition">This group incorporates all state variables pertaining to zooplankton, which are defined for the purposes of this grouping as any heterotrophic organisms in the water column that are not mammals, reptiles or fish.  Most parameters in this group express the abundance, either as cell counts or biomass, of various types of zooplankton. However, the group also includes parameters that describe any other property of these entities that are  not rates or fluxes , such as the concentrations of faecal pellets or eggs in the water column or sediment.</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS02">
+                <div class="category-header ">
+                    <h2 class="category-title">Chemical oceanography (DS02) </h2>
+                    <p class="category-description">The chemical oceanographic science domain</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="C003">
+                        <h3 class="keyword-title">Amino acids </h3>
+                        <p class="keyword-id">SDN:P03::C003</p>
+                        <p class="keyword-definition">This group contains parameters pertaining to amino acid concentrations.  Amino acids are defined as carboxylic acids with an amino group at the alpha position.  The grouping covers concentrations of these compounds in the water column (mass of amino acid per unit mass/volume of water) or their content in sediment or suspended particulate matter.  The grouping does not include amino acid fluxes or rate variables, such as bacterial production by leucine uptake.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B007">
+                        <h3 class="keyword-title">Biota composition </h3>
+                        <p class="keyword-id">SDN:P03::B007</p>
+                        <p class="keyword-definition">This group contains all parameters relating to the composition of organisms or their constituent parts. It may include any analytical measurements on biological material, but is specifically designed for heavy metal and organic contaminant biota pollution monitoring data.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C005">
+                        <h3 class="keyword-title">Carbon, nitrogen and phosphorus </h3>
+                        <p class="keyword-id">SDN:P03::C005</p>
+                        <p class="keyword-definition">This group contains the state variable parameters pertaining to carbon, nitrogen and phosphorus that do not obviously belong in other groupings. Consequently, this grouping should be considered as an 'others' category and its contents should be periodically reviewed with a view to the creation of additional groupings should this be deemed necessary.  In the case of carbon, parameters are split between this grouping and the Carbonate System APG. The latter are clearly defined and this group contains anything that is left. Current (May 2003) carbon parameters in this grouping from the BODC Parameter Dictionary include:   Measurements of the calcite concentration in the water column expressed in terms of carbon concentration per unit volume/mass of water.  Particulate organic (or total) carbon concentration.  Dissolved organic carbon concentration.  Total, organic and/or inorganic carbon content (mass carbon per unit mass of substrate) of sediment or suspended particulate material.   For nitrogen, the parameters are split between this APG and Nutrients. Again, the latter is more clearly defined, leaving the rest for this grouping. Current (May 2003) nitrogen parameters in this grouping from the BODC Parameter Dictionary include:   Particulate nitrogen ("PON") concentration.  Dissolved total nitrogen.  Nitrogen content of sediment.   For phosphorus, the parameters are again split between this APG and Nutrients, which is the more clearly defined. Current (May 2003) phosphorus parameters in this grouping from the BODC Parameter Dictionary include:   Particulate total and organic phosphorus concentration.  Dissolved total phosphorus.  Phosphorus content of sediment or SPM.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C010">
+                        <h3 class="keyword-title">Carbonate system </h3>
+                        <p class="keyword-id">SDN:P03::C010</p>
+                        <p class="keyword-definition">This group incorporates the state variables that describe the concentration of dissolved inorganic carbon and the status of the equilibrium between this and the atmospheric carbon dioxide concentration.  These are:   Carbon dioxide partial pressure/fugacity.  Total alkalinity.  pH  Dissolved inorganic carbon (TCO 2 )   The group also includes parameters that are essential for the interpretation of the data, such as the temperature at which a parameter was collected or to which it has been recalculated.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C015">
+                        <h3 class="keyword-title">Dissolved gases </h3>
+                        <p class="keyword-id">SDN:P03::C015</p>
+                        <p class="keyword-definition">This group incorporates dissolved gas concentrations and/or saturations, excluding:   Gases that are incorporated into the water column through chemical reaction and quantified as the products of the reaction, such as ammonia and carbon dioxide.  Gases that belong to other chemical-type APGs. For example, methane parameters are placed in the Hydrocarbons APG and not Dissolved Gases.   Gases are defined as substances with a boiling point below 50 &deg;C at atmospheric pressure (terrestrial conditions extreme limit).  The group also includes:   Parameters collected by instruments making in-situ measurements of dissolved gas concentration, such as oxygen membrane current and temperature.  Parameters required for data standardisation, such as oxygen fixation temperature.  Parameters required for the interpretation of gas concentration parameters, such as the temperature and pressure at which the concentration has been calculated if these differ from the in-situ conditions for the sample.   This APG should represents dissolved gases that do not fit in any other category and consequently its contents should be periodically reviewed to see if further classes need to be specified.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C017">
+                        <h3 class="keyword-title">Fatty acids </h3>
+                        <p class="keyword-id">SDN:P03::C017</p>
+                        <p class="keyword-definition">This group incorporates the parameters relating to the fatty acid content of sediment or suspended particulate material. Contents are expressed either as 'concentrations' (SPM fatty acid per unit volume of water) or 'contents' (quantity of fatty acid per unit mass of sediment or SPM).  Fatty acids are considered as the naturally occurring continuous chain, saturated and unsaturated aliphatic acids. In their ester form these are the constituents of the fats, waxes and oils of plants and animals. Simpler carboxylic acids with an alkyl or alkenyl group, sometimes loosely termed 'fatty acids' are not included.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C020">
+                        <h3 class="keyword-title">Halocarbons (including freons) </h3>
+                        <p class="keyword-id">SDN:P03::C020</p>
+                        <p class="keyword-definition">Parameters concerning all compounds of carbon covalently bonded to and one or members of the halogen group (fluorine, chlorine, bromine or iodine) but with no other functional groups.  It includes naturally generated compounds (usually short-chain haloalkanes and haloalkenes), man-made freons and contaminants such as organochlorine pesticides.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C025">
+                        <h3 class="keyword-title">Hydrocarbons </h3>
+                        <p class="keyword-id">SDN:P03::C025</p>
+                        <p class="keyword-definition">This group contains parameter codes describing the concentrations of the compounds of carbon and hydrogen. All compounds conforming to this definition are placed in this APG, including aromatic compounds, even polycyclic aromatic hydrocarbons traditionally categorised as 'pollutants'. This is to circumvent problems deciding which hydrocarbons are pollutants and which are not.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C030">
+                        <h3 class="keyword-title">Isotopes </h3>
+                        <p class="keyword-id">SDN:P03::C030</p>
+                        <p class="keyword-definition">This group contains parameter codes relating to the abundance of both radioactive and stable isotopes. All types of substrate are included - water, SPM, sediment and biological material.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C035">
+                        <h3 class="keyword-title">Metal and metalloid concentrations </h3>
+                        <p class="keyword-id">SDN:P03::C035</p>
+                        <p class="keyword-definition">Parameters pertaining to metal and trace metalloid (i.e. excluding Si) concentrations in any material.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C040">
+                        <h3 class="keyword-title">Nutrients </h3>
+                        <p class="keyword-id">SDN:P03::C040</p>
+                        <p class="keyword-definition">This group contains parameter codes describing the concentrations of the substances that provide the essential basic elements - nitrogen, phosphorus and silicon - to the phytoplankton. The species covered are:   Nitrogen - nitrate, nitrite, ammonium and urea.  Phosphorus - orthophosphate  Silicon - hydrosilicic acid, commonly termed 'silicate'.   The grouping also covers uncalibrated analytical or in-situ instrument outputs, such as monochromatic optical absorbances at the appropriate wavelengths for nutrient determination.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C045">
+                        <h3 class="keyword-title">Other inorganic chemical measurements </h3>
+                        <p class="keyword-id">SDN:P03::C045</p>
+                        <p class="keyword-definition">This is a 'safety net' category to cover inorganic chemical parameters that cannot be mapped to other Agreed Parameter Groups. It should be regarded as a transitional grouping: if a significant number of related parameters map to this group then the creation of an additional group should be discussed and agreed.  The following parameters within the BODC Parameter Dictionary currently (May 2003) fall into this category.   Non-metal concentrations in the water column, suspended particulate material and sediment.  Element distribution coefficients between dissolved and particulate phases.  Thermodynamic data such as ligand binding strengths.  Redox potentials.  Uncalibrated analytical instrument output, such as XRF counts for element-specific peaks.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C050">
+                        <h3 class="keyword-title">Other organic chemical measurements </h3>
+                        <p class="keyword-id">SDN:P03::C050</p>
+                        <p class="keyword-definition">This is a 'safety net' category to cover organic chemical parameters that cannot be mapped to other Agreed Parameter Groups. It should be regarded as a transitional grouping: if a significant number of related parameters map to this group then the creation of an additional group should be discussed and agreed.  The following parameters within the BODC Parameter Dictionary currently (May 2003) fall into this category.   Alkenones, alkanols and alkenoate concentrations.  Organometallic compound and ligand, such as dimethyl arsenic and Fe-organic ligand, concentrations.  Organosulphur compound, such as dimethyl sulphoxide and DMSP, concentrations. Note that dimethyl sulphide has been categorised as a dissolved gas.  Biomarker compound, such as DNA, RNA and ATP, concentrations.  Carbohydrate concentrations.  Protein concentrations.  Amine concentrations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="C055">
+                        <h3 class="keyword-title">PCBs and organic micropollutants </h3>
+                        <p class="keyword-id">SDN:P03::C055</p>
+                        <p class="keyword-definition">This group is designed to bring together parameters pertaining to concentrations of extremely toxic organic chemicals in air, water, SPM, sediment or biological material. It has been set up as an alternative miscellaneous APG to 'Other Organic Chemical Measurements' to assist searches for environmentally significant substances.  The inclusion of a parameter in this grouping has to be subjective to some extent. The following types of substance have been included for the current (May 2003) version of the BODC Parameter Dictionary.   Polychlorobiphenols (PCBs)  Pesticides  Herbicides  Anti-fouling agents</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS03">
+                <div class="category-header ">
+                    <h2 class="category-title">Physical oceanography (DS03) </h2>
+                    <p class="category-description">The physical oceanographic science domain</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="D005">
+                        <h3 class="keyword-title">Acoustics </h3>
+                        <p class="keyword-id">SDN:P03::D005</p>
+                        <p class="keyword-definition">This group contains parameter codes relating to the propagation of sound through seawater, such as signal amplitude, noise, signal return, travel time and sound velocity.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="D030">
+                        <h3 class="keyword-title">Currents </h3>
+                        <p class="keyword-id">SDN:P03::D030</p>
+                        <p class="keyword-definition">This APG contains all parameters pertaining to the measurement of:   Eulerian currents  Lagrangian currents (except drifter position)  Vertical currents  River flow velocity</p>
+                    </div>
+            
+                    <div class="keyword " data-code="D015">
+                        <h3 class="keyword-title">Optical properties </h3>
+                        <p class="keyword-id">SDN:P03::D015</p>
+                        <p class="keyword-definition">This APG contains parameters pertaining to the optical properties of seawater. Assigning parameters to this group encounters two areas of difficulty.  Optical techniques, such as transmissometers and nephelometers, are used to quantify SPM concentration. The 'usual' parameter for transmissometer measurements is optical attenuance (or its natural log), which is clearly an optical property. Consequently, attenuance, percentage transmission and their precursor voltages have been included in this APG. However, the usual calibrated parameter from a nephelometer is turbidity, which is clearly more closely related to the suspended load of the water column. Consequently, nephelometer parameters, including raw voltages, have been included in the Suspended Particulate Matter APG.  Light intensity, such as downwelling irradiance, may be measured by sensors placed either above or below the surface of the water. It might be argued that the latter belonged in the Meteorology APG. However, some irradiance records include measurements both above and below the sea surface to quantify light loss across the air-sea interface. Consequently, both surface and subsurface irradiance have been placed in the Optical Properties APG.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="D020">
+                        <h3 class="keyword-title">Other physical oceanographic measurements </h3>
+                        <p class="keyword-id">SDN:P03::D020</p>
+                        <p class="keyword-definition">This is a 'safety net' category to cover physical oceanographic parameters that cannot be mapped to other Agreed Parameter Groups. It should be regarded as a transitional grouping: if a significant number of related parameters map to this group then the creation of an additional group should be discussed and agreed.  The following parameters within the BODC Parameter Dictionary currently (May 2003) fall into this category.   Parameters derived from temperature and salinity, such as density anomaly and Brunt-Vaisala frequency.  The volume to mass (litres to kilograms) conversion parameter.  Parameters measured by in-situ turbulence probes (e.g. FLY probe), such as temperature dissipation rate, turbulent kinetic energy dissipation and diffusivity.   The BODC parameters 'PRES' (sea pressure in decibars) and 'ADEP' (depth in metres) are also included in this group. This is because there is an ambiguity problem with these parameters assigned to both measurements of tidal height by water level recorders (obviously Currents, Sea Level and Waves APG) and to the 'z' spatial co-ordinate for CTD and radiosonde data (obviously Administration and Dimensions APG). This problem will be addressed in a planned future restructuring of the BODC database by setting up and applying two separate codes.  Pressure channels in current meter records pose additional problems as the data may either be used as a measure of tidal height or to monitor the depth of the instrument, looking primarily for knockdown. Current thinking is to assign the 'tidal height' pressure code in this case as the pressure record rarely provides an accurate estimate of the instrument's 'z' co-ordinate.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="D032">
+                        <h3 class="keyword-title">Sea level </h3>
+                        <p class="keyword-id">SDN:P03::D032</p>
+                        <p class="keyword-definition">This APG contains all parameters pertaining to the measurement of:   Sea level relative to a terrestrial datum  Water column height at a fixed location</p>
+                    </div>
+            
+                    <div class="keyword " data-code="D025">
+                        <h3 class="keyword-title">Water column temperature and salinity </h3>
+                        <p class="keyword-id">SDN:P03::D025</p>
+                        <p class="keyword-definition">This APG includes the parameters associated with the in-situ measurement of water column temperature (including potential temperature) and salinity (including conductivity).  Parameters derived from either temperature or salinity (but not temperature AND salinity), such as temperature gradient or temperature variance, are also included.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="D034">
+                        <h3 class="keyword-title">Waves </h3>
+                        <p class="keyword-id">SDN:P03::D034</p>
+                        <p class="keyword-definition">This APG contains all parameters pertaining to the measurement of:   Wave height  Wave period  Wave direction  Wave energy spectra</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS04">
+                <div class="category-header ">
+                    <h2 class="category-title">Marine geology (DS04) </h2>
+                    <p class="category-description">The marine geological science domain</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="GPYS">
+                        <h3 class="keyword-title">Field geophysics </h3>
+                        <p class="keyword-id">SDN:P03::GPYS</p>
+                        <p class="keyword-definition">In-situ measurements of physical phenomena designed to elucidate the composition and structure of underlying geological units</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G030">
+                        <h3 class="keyword-title">Geochronology and stratigraphy </h3>
+                        <p class="keyword-id">SDN:P03::G030</p>
+                        <p class="keyword-definition">Parameters pertaining to the absolute and stratigraphic age of rocks (including speleotherms) and unlithified sediment.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="GTHM">
+                        <h3 class="keyword-title">Geothermal measurements </h3>
+                        <p class="keyword-id">SDN:P03::GTHM</p>
+                        <p class="keyword-definition">Parameters pertaining to the distribution of the degree of hotness in geologic units (including bodies of unconsolidated sediment), heat transfer in the Earth and the thermal properties of rocks, minerals and sediments.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G005">
+                        <h3 class="keyword-title">Gravity, magnetics and bathymetry </h3>
+                        <p class="keyword-id">SDN:P03::G005</p>
+                        <p class="keyword-definition">Parameters related to the strength and characteristics of the Earth's magnetic and gravity fields and the spatial variation in water body depth.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="GMAR">
+                        <h3 class="keyword-title">Marine geomorphology </h3>
+                        <p class="keyword-id">SDN:P03::GMAR</p>
+                        <p class="keyword-definition">Parameters describing the morphology, evolution and associated transport phenomena of both seafloor and coastal landforms and features. Seafloor features may include bedforms, seamounts and ridges. Coastal features may include beaches and dunes.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G055">
+                        <h3 class="keyword-title">Rock and sediment biota </h3>
+                        <p class="keyword-id">SDN:P03::G055</p>
+                        <p class="keyword-definition">Parameters pertaining to flora, fauna and their fossil remains in rocks and unlithified sediment. Includes zoobenthos, phytobenthos and palaeontology.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G035">
+                        <h3 class="keyword-title">Rock and sediment chemistry </h3>
+                        <p class="keyword-id">SDN:P03::G035</p>
+                        <p class="keyword-definition">Parameters pertaining to the chemistry (including isotopic composition) of rocks (including speleotherms) and unlithified sediment.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G045">
+                        <h3 class="keyword-title">Rock and sediment lithology and mineralogy </h3>
+                        <p class="keyword-id">SDN:P03::G045</p>
+                        <p class="keyword-definition">Parameters pertaining to the petrological characterisation and component minerals of rocks (including speleotherms) and unlithified sediment.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G040">
+                        <h3 class="keyword-title">Rock and sediment physical properties </h3>
+                        <p class="keyword-id">SDN:P03::G040</p>
+                        <p class="keyword-definition">Parameters pertaining to the physical properties of rocks (including speleotherms) and unlithified sediment.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="GSED">
+                        <h3 class="keyword-title">Rock and sediment sedimentology </h3>
+                        <p class="keyword-id">SDN:P03::GSED</p>
+                        <p class="keyword-definition">Parameters pertaining to the sedimentological characterisation (e.g. structure, formation) of rocks (including speleothems) and unlithified sediment</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G050">
+                        <h3 class="keyword-title">Sediment pore water chemistry </h3>
+                        <p class="keyword-id">SDN:P03::G050</p>
+                        <p class="keyword-definition">Parameters pertaining to the chemistry of the interstitial pore waters in unlithified sediments.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G060">
+                        <h3 class="keyword-title">Sedimentation and erosion processes </h3>
+                        <p class="keyword-id">SDN:P03::G060</p>
+                        <p class="keyword-definition">Parameters pertaining to the removal and deposition of unlithified sediments.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G012">
+                        <h3 class="keyword-title">Sonar and seismics </h3>
+                        <p class="keyword-id">SDN:P03::G012</p>
+                        <p class="keyword-definition">Parameters associated with determination of sub-floor structure based on the propogation of acoustic energy and acoustic imaging of the sea floor.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G015">
+                        <h3 class="keyword-title">Suspended particulate material </h3>
+                        <p class="keyword-id">SDN:P03::G015</p>
+                        <p class="keyword-definition">Parameters pertaining to material in suspension within water bodies.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="UWPH">
+                        <h3 class="keyword-title">Underwater photography </h3>
+                        <p class="keyword-id">SDN:P03::UWPH</p>
+                        <p class="keyword-definition">Still or video digital images taken below the surface of the water column</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS05">
+                <div class="category-header ">
+                    <h2 class="category-title">Atmosphere (DS05) </h2>
+                    <p class="category-description">The atmospheric sciences domain</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="M005">
+                        <h3 class="keyword-title">Atmospheric chemistry </h3>
+                        <p class="keyword-id">SDN:P03::M005</p>
+                        <p class="keyword-definition">Parameters quantifying and characterising the solid, liquid and gaseous materials that make up the Earth's atmosphere</p>
+                    </div>
+            
+                    <div class="keyword " data-code="M010">
+                        <h3 class="keyword-title">Meteorology </h3>
+                        <p class="keyword-id">SDN:P03::M010</p>
+                        <p class="keyword-definition">Physical phenomena and properties of the atmosphere including air temperature, air pressure, humidity, precipitation, wind velocity and radiation.</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS06">
+                <div class="category-header ">
+                    <h2 class="category-title">Cross-discipline (DS06) </h2>
+                    <p class="category-description">No specific association with an identified domain</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="O005">
+                        <h3 class="keyword-title">Fluxes </h3>
+                        <p class="keyword-id">SDN:P03::O005</p>
+                        <p class="keyword-definition">This group contains parameter codes that relate to the rate of transfer of material across real or virtual interfaces. The current (May 2003) BODC Parameter Dictionary includes two types of flux:   Vertical fluxes of mass, chemical species and biological entities through the water column (sediment trap fluxes).  Fluxes of chemical species between the water column and the underlying sediment, including sediment oxygen demand.   However, other categories, such as the estuary discharge fluxes, are envisaged in the future.  Note that this APG has been given 'priority' status to enable modellers to easily ascertain the extent of rate variable availability. Flux parameters are included in this APG in preference to any other APG that might seem appropriate.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="O010">
+                        <h3 class="keyword-title">Rate measurements (including production, excretion and grazing) </h3>
+                        <p class="keyword-id">SDN:P03::O010</p>
+                        <p class="keyword-definition">This group contains parameter codes that relate to the rate of change of quantity of any chemical species or biological entity. Rates mey be the result of biological (e.g. production), chemical (e.g. photochemical degradation) or biogeochemical (e.g. particulate phase metal uptake rate) processes. The current (May 2003) BODC Parameter Dictionary includes the following types of rate:   Primary production ( 14 C uptake rate)  Photosynthesis kinetics (P:I experiments)  New/regenerated ( 15 N) production  Calcification  Nitrification  Nutrient uptake rates  Bacterial production, including thymidine/leucine uptake  Metal uptake rates  Egg production rates  Bacterial and phytoplankton grazing rates  Food clearance rates  Chemical photoproduction and degradation rates  DOC production/uptake  DMS/DMSP/DMSO dynamics  Excretion and faecal pellet production rates  Oxygen/DIC production/respiration  Hydrolysis rates  Growth efficiency/rates  Sulphate reduction rates   Some experimental condition parameters, such as incubation temperatures and durations, are also included.  Note that this APG has been given 'priority' status to enable modellers to easily ascertain the extent of rate variable availability. Rate parameters are included in this APG in preference to any other APG that might seem appropriate.</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS07">
+                <div class="category-header ">
+                    <h2 class="category-title">Administration and dimensions (DS07) </h2>
+                    <p class="category-description">Parameters related to spatial and temporal co-ordinates, entity referencing (eg record numbering and keys) and access control</p>
+                </div>
+                <div class="category-content">
+        
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS08">
+                <div class="category-header ">
+                    <h2 class="category-title">Terrestrial (DS08) </h2>
+                    <p class="category-description">The terrestrial science domain</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="G030">
+                        <h3 class="keyword-title">Geochronology and stratigraphy </h3>
+                        <p class="keyword-id">SDN:P03::G030</p>
+                        <p class="keyword-definition">Parameters pertaining to the absolute and stratigraphic age of rocks (including speleotherms) and unlithified sediment.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G055">
+                        <h3 class="keyword-title">Rock and sediment biota </h3>
+                        <p class="keyword-id">SDN:P03::G055</p>
+                        <p class="keyword-definition">Parameters pertaining to flora, fauna and their fossil remains in rocks and unlithified sediment. Includes zoobenthos, phytobenthos and palaeontology.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G035">
+                        <h3 class="keyword-title">Rock and sediment chemistry </h3>
+                        <p class="keyword-id">SDN:P03::G035</p>
+                        <p class="keyword-definition">Parameters pertaining to the chemistry (including isotopic composition) of rocks (including speleotherms) and unlithified sediment.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G045">
+                        <h3 class="keyword-title">Rock and sediment lithology and mineralogy </h3>
+                        <p class="keyword-id">SDN:P03::G045</p>
+                        <p class="keyword-definition">Parameters pertaining to the petrological characterisation and component minerals of rocks (including speleotherms) and unlithified sediment.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G040">
+                        <h3 class="keyword-title">Rock and sediment physical properties </h3>
+                        <p class="keyword-id">SDN:P03::G040</p>
+                        <p class="keyword-definition">Parameters pertaining to the physical properties of rocks (including speleotherms) and unlithified sediment.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="G060">
+                        <h3 class="keyword-title">Sedimentation and erosion processes </h3>
+                        <p class="keyword-id">SDN:P03::G060</p>
+                        <p class="keyword-definition">Parameters pertaining to the removal and deposition of unlithified sediments.</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS09">
+                <div class="category-header ">
+                    <h2 class="category-title">Cryosphere (DS09) </h2>
+                    <p class="category-description">The cryosphere science domain, including ice on both land and sea</p>
+                </div>
+                <div class="category-content">
+                    
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS10">
+                <div class="category-header ">
+                    <h2 class="category-title">Environment (DS10) </h2>
+                    <p class="category-description">The domain documenting the habitat (physical, biological or chemical conditions) surrounding an organism or a group of organisms, or factors affecting any part of the earth ecosystem past and present.</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="H002">
+                        <h3 class="keyword-title">Construction and structures </h3>
+                        <p class="keyword-id">SDN:P03::H002</p>
+                        <p class="keyword-definition">Parameters describing the nature and impact of coastal and offshore man-made objects and the process of creating them.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="B050">
+                        <h3 class="keyword-title">Habitat </h3>
+                        <p class="keyword-id">SDN:P03::B050</p>
+                        <p class="keyword-definition">Grouping of parameters that characterise, spatially define, label or classify places where organisms are found.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H001">
+                        <h3 class="keyword-title">Pollution </h3>
+                        <p class="keyword-id">SDN:P03::H001</p>
+                        <p class="keyword-definition">Parameters describing the abundance, nature and impact of material added to the environment by the activities of man.</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS11">
+                <div class="category-header deprecated">
+                    <h2 class="category-title">Fisheries and aquaculture (DS11) <span class="deprecated-label">Deprecated</span></h2>
+                    <p class="category-description">The science domain concerned with aquatic life taken from the wild or farmed for human consumption</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="B020">
+                        <h3 class="keyword-title">Fish </h3>
+                        <p class="keyword-id">SDN:P03::B020</p>
+                        <p class="keyword-definition">This group incorporates all state variables pertaining to fish, such as abundance, biomass and fisheries data.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H004">
+                        <h3 class="keyword-title">Fisheries </h3>
+                        <p class="keyword-id">SDN:P03::H004</p>
+                        <p class="keyword-definition">Parameters related to any aspect of the taking of water-living fauna from the wild</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS12">
+                <div class="category-header ">
+                    <h2 class="category-title">Human activities (DS12) </h2>
+                    <p class="category-description">The domain documenting the activities of man that have an effect on the Earth System.</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="H006">
+                        <h3 class="keyword-title">Aquaculture </h3>
+                        <p class="keyword-id">SDN:P03::H006</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of farming aquatic animal and plants.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H007">
+                        <h3 class="keyword-title">Area Management/Designation </h3>
+                        <p class="keyword-id">SDN:P03::H007</p>
+                        <p class="keyword-definition">Datasets related to the process of managing aquatic and coastal environments.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H008">
+                        <h3 class="keyword-title">Cables </h3>
+                        <p class="keyword-id">SDN:P03::H008</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of deploying and maintaining communication and power cables.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H002">
+                        <h3 class="keyword-title">Construction and structures </h3>
+                        <p class="keyword-id">SDN:P03::H002</p>
+                        <p class="keyword-definition">Parameters describing the nature and impact of coastal and offshore man-made objects and the process of creating them.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H009">
+                        <h3 class="keyword-title">Cultural Heritage </h3>
+                        <p class="keyword-id">SDN:P03::H009</p>
+                        <p class="keyword-definition">Datasets related to the process of managing cultural and historical artifacts.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H010">
+                        <h3 class="keyword-title">Energy </h3>
+                        <p class="keyword-id">SDN:P03::H010</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of electrical power generation.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H004">
+                        <h3 class="keyword-title">Fisheries </h3>
+                        <p class="keyword-id">SDN:P03::H004</p>
+                        <p class="keyword-definition">Parameters related to any aspect of the taking of water-living fauna from the wild</p>
+                    </div>
+            
+                    <div class="keyword deprecated" data-code="H005">
+                        <h3 class="keyword-title">Human activity <span class="deprecated-label">Deprecated</span></h3>
+                        <p class="keyword-id">SDN:P03::H005</p>
+                        <p class="keyword-definition">Parameters quantifying the level of any type of human activity, generally in the context of environmental considerations</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H011">
+                        <h3 class="keyword-title">Hydrocarbon extraction </h3>
+                        <p class="keyword-id">SDN:P03::H011</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of locating and extracting hydrocarbon compounds from underground sources.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H012">
+                        <h3 class="keyword-title">Mining </h3>
+                        <p class="keyword-id">SDN:P03::H012</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of locating and extracting coal or other minerals.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H013">
+                        <h3 class="keyword-title">Pipelines </h3>
+                        <p class="keyword-id">SDN:P03::H013</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of deploying and maintaining pipelines.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H001">
+                        <h3 class="keyword-title">Pollution </h3>
+                        <p class="keyword-id">SDN:P03::H001</p>
+                        <p class="keyword-definition">Parameters describing the abundance, nature and impact of material added to the environment by the activities of man.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H014">
+                        <h3 class="keyword-title">Salt extraction </h3>
+                        <p class="keyword-id">SDN:P03::H014</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of extracting salt from saltwater.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H015">
+                        <h3 class="keyword-title">Tourism </h3>
+                        <p class="keyword-id">SDN:P03::H015</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of tourism including activities and facilities or installations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H016">
+                        <h3 class="keyword-title">Transport </h3>
+                        <p class="keyword-id">SDN:P03::H016</p>
+                        <p class="keyword-definition">Datasets related to the process or industry of transport including activities and facilities or installations.</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="DS13">
+                <div class="category-header ">
+                    <h2 class="category-title">Hydrology (DS13) </h2>
+                    <p class="category-description">The hydrological science domain, including water quality, groundwater, and river systems</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="H017">
+                        <h3 class="keyword-title">Bathymetry and Elevation </h3>
+                        <p class="keyword-id">SDN:P03::H017</p>
+                        <p class="keyword-definition">Parameters related to the measurement and mapping of water body depths and elevations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H018">
+                        <h3 class="keyword-title">Concentration of inorganic halogens in ice </h3>
+                        <p class="keyword-id">SDN:P03::H018</p>
+                        <p class="keyword-definition">Parameters pertaining to the concentration of inorganic halogen compounds in ice formations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H019">
+                        <h3 class="keyword-title">Concentration of inorganic sulphur species in ice </h3>
+                        <p class="keyword-id">SDN:P03::H019</p>
+                        <p class="keyword-definition">Parameters pertaining to the concentration of inorganic sulphur compounds in ice formations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H020">
+                        <h3 class="keyword-title">Concentration of organic sulphur species in ice </h3>
+                        <p class="keyword-id">SDN:P03::H020</p>
+                        <p class="keyword-definition">Parameters pertaining to the concentration of organic sulphur compounds in ice formations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H021">
+                        <h3 class="keyword-title">Groundwater amount </h3>
+                        <p class="keyword-id">SDN:P03::H021</p>
+                        <p class="keyword-definition">Parameters related to the quantification of groundwater resources.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H022">
+                        <h3 class="keyword-title">Groundwater chemistry </h3>
+                        <p class="keyword-id">SDN:P03::H022</p>
+                        <p class="keyword-definition">Parameters pertaining to the chemical composition and properties of groundwater.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H023">
+                        <h3 class="keyword-title">Ice age </h3>
+                        <p class="keyword-id">SDN:P03::H023</p>
+                        <p class="keyword-definition">Parameters related to the age determination of ice formations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H024">
+                        <h3 class="keyword-title">Ice motion and related parameters </h3>
+                        <p class="keyword-id">SDN:P03::H024</p>
+                        <p class="keyword-definition">Parameters pertaining to the movement and dynamics of ice formations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H025">
+                        <h3 class="keyword-title">Invasive species monitoring parameters </h3>
+                        <p class="keyword-id">SDN:P03::H025</p>
+                        <p class="keyword-definition">Parameters used to monitor and assess the presence and impact of invasive species in aquatic environments.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H026">
+                        <h3 class="keyword-title">Metal concentrations in suspended particulate material </h3>
+                        <p class="keyword-id">SDN:P03::H026</p>
+                        <p class="keyword-definition">Parameters pertaining to the concentration of metals in suspended particulate matter in water bodies.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H027">
+                        <h3 class="keyword-title">Metal concentrations in the cryosphere </h3>
+                        <p class="keyword-id">SDN:P03::H027</p>
+                        <p class="keyword-definition">Parameters pertaining to the concentration of metals in ice and snow formations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H028">
+                        <h3 class="keyword-title">Other fluxes between the bed and the water column </h3>
+                        <p class="keyword-id">SDN:P03::H028</p>
+                        <p class="keyword-definition">Parameters related to the exchange of materials between the water column and the bed of water bodies.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H029">
+                        <h3 class="keyword-title">Pollution events </h3>
+                        <p class="keyword-id">SDN:P03::H029</p>
+                        <p class="keyword-definition">Parameters related to the monitoring and assessment of pollution incidents in water bodies.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H030">
+                        <h3 class="keyword-title">River flow and discharge </h3>
+                        <p class="keyword-id">SDN:P03::H030</p>
+                        <p class="keyword-definition">Parameters pertaining to the measurement of river water flow rates and discharge volumes.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H031">
+                        <h3 class="keyword-title">Spectral wave data parameters </h3>
+                        <p class="keyword-id">SDN:P03::H031</p>
+                        <p class="keyword-definition">Parameters related to the spectral analysis of wave data in water bodies.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H032">
+                        <h3 class="keyword-title">Stable isotopes in ice and snow </h3>
+                        <p class="keyword-id">SDN:P03::H032</p>
+                        <p class="keyword-definition">Parameters pertaining to the stable isotope composition of ice and snow formations.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H033">
+                        <h3 class="keyword-title">Terrestrial water content </h3>
+                        <p class="keyword-id">SDN:P03::H033</p>
+                        <p class="keyword-definition">Parameters related to the measurement of water content in terrestrial environments.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H034">
+                        <h3 class="keyword-title">Water quality bioindicators </h3>
+                        <p class="keyword-id">SDN:P03::H034</p>
+                        <p class="keyword-definition">Parameters used to assess water quality through biological indicators.</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+            <div class="category" data-code="Uncategorized">
+                <div class="category-header ">
+                    <h2 class="category-title">Uncategorized (Uncategorized) </h2>
+                    <p class="category-description">P03 keywords without a P08 broader concept</p>
+                </div>
+                <div class="category-content">
+        
+                    <div class="keyword " data-code="Z005">
+                        <h3 class="keyword-title">Administration and dimensions </h3>
+                        <p class="keyword-id">SDN:P03::Z005</p>
+                        <p class="keyword-definition">This APG is primarily intended for parameters that specify the dimensions:   x, y (e.g. latitude, longitude)  z (e.g. height above sea level/sea floor, depth/pressure)  t (e.g. date/time, elapsed time)   However, there are other parameters, such as general purpose quality control flags, sequence numbers, platform orientation (heading)/velocity, sampling duration/quantity (e.g. volume filtered) that have been included in the BODC dictionary mapping. It is inevitable that a grouping such as this will become the final resting place for parameters that do not fit into any other existing APG. The mappings to this group therefore require periodical review.  Note the potential for problems with confusion between pressure/depth as a z co-ordinate, as a sea level parameter (variation with time), or as a seafloor topography (bathymetry) measurement. Each of these should be assigned a different parameter if sensible grouping is to be possible. BODC currently has problems in this area that have been temporarily resolved by mapping ambiguous pressure/depth parameters into the Other Physical Oceanographic Measurements APG until the problems can be resolved as part of a planned future database restructure.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="M015">
+                        <h3 class="keyword-title">Cryosphere </h3>
+                        <p class="keyword-id">SDN:P03::M015</p>
+                        <p class="keyword-definition">This group incorporates all parameters pertaining to frozen precipitation, lying snow and ice, permafrost, icebergs, glaciers and ice caps.</p>
+                    </div>
+            
+                    <div class="keyword deprecated" data-code="D010">
+                        <h3 class="keyword-title">Currents, sea level and waves <span class="deprecated-label">Deprecated</span></h3>
+                        <p class="keyword-id">SDN:P03::D010</p>
+                        <p class="keyword-definition">This APG contains all parameters pertaining to the measurement of:   Eulerian currents  Lagrangian currents (except drifter position)  Vertical currents  River flow velocity  Wave height  Wave period  Wave direction  Wave energy spectra  Sea level relative to a terrestrial datum  Water column height at a fixed location</p>
+                    </div>
+            
+                    <div class="keyword deprecated" data-code="G025">
+                        <h3 class="keyword-title">Igneous and metamorphic rock geochemistry and geochronology <span class="deprecated-label">Deprecated</span></h3>
+                        <p class="keyword-id">SDN:P03::G025</p>
+                        <p class="keyword-definition">This APG includes all geochemical and parameters for igneous rocks, metamorphic rocks and high-temperature mineral deposits. Age parameters include parameters relating to both geochemical and stratigraphic techniques.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="H003">
+                        <h3 class="keyword-title">Palaeoclimate </h3>
+                        <p class="keyword-id">SDN:P03::H003</p>
+                        <p class="keyword-definition">Measurements and parameterisations from which the climatic conditions in the recent or geological past may be determined or described.</p>
+                    </div>
+            
+                    <div class="keyword deprecated" data-code="G010">
+                        <h3 class="keyword-title">Sediment properties <span class="deprecated-label">Deprecated</span></h3>
+                        <p class="keyword-id">SDN:P03::G010</p>
+                        <p class="keyword-definition">This group includes parameters pertaining to the physical properties of sediment. 'Sediment' can include both bottom and suspended particulate material if the property is equally applicable whether or not the sediment is in suspension.  This category will inevitably end up as a 'catch all' for sediment parameters that cannot be mapped to other APGs, and consequently its composition should be periodically reviewed. The BODC Parameter Dictionary currently (May 2003) includes the following types of parameter in this grouping:   Sediment cohesive strength (e.g. erosion stress and shear velocity).  Mineralogy (including organic matter content).  Dating and accumulation rate.  Porosity and water content  Grain size and density.  Magnetic susceptibility and resistivity.</p>
+                    </div>
+            
+                    <div class="keyword deprecated" data-code="G020">
+                        <h3 class="keyword-title">Sedimentary rock geochemistry and geochronology <span class="deprecated-label">Deprecated</span></h3>
+                        <p class="keyword-id">SDN:P03::G020</p>
+                        <p class="keyword-definition">This APG covers geochemical and age data collected from fully lithified sediments (i.e. sedimentary rocks), water-deposited minerals (e.g. tufa and speleothems) and hard biological deposits (e.g. coral reefs). The group includes both geochemical and stratigraphic geochronological parameters</p>
+                    </div>
+            
+                    <div class="keyword " data-code="T001">
+                        <h3 class="keyword-title">Terrestrial </h3>
+                        <p class="keyword-id">SDN:P03::T001</p>
+                        <p class="keyword-definition">This APG contains parameters related to the characterisation of the land surface. These are usually, but not exclusively, determined by remote sensing techniques. Data types falling within the scope of the group are:   Land surface temperature  Land vegetation  Vertical currents  Terrestrial water content  Terrestrial mapping and the geo-location of features such as coastlines</p>
+                    </div>
+            
+                    <div class="keyword deprecated" data-code="B040">
+                        <h3 class="keyword-title">Zoobenthos <span class="deprecated-label">Deprecated</span></h3>
+                        <p class="keyword-id">SDN:P03::B040</p>
+                        <p class="keyword-definition">This group contains state variables for animals, other than fish, that live on the sea floor or in the sediment.  Most parameters pertain to the abundance, expressed as numbers or biomass per unit area of sea floor, of species, genera or less rigorous groupings of animals. However any other properties of these entities that are  not rates or fluxes  could be included.</p>
+                    </div>
+            
+                    <div class="keyword " data-code="INAZ">
+                        <h3 class="keyword-title">inapplicable </h3>
+                        <p class="keyword-id">SDN:P03::INAZ</p>
+                        <p class="keyword-definition">There is no appropriate value.</p>
+                    </div>
+            
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    
+    <script>
+        // Toggle category content when header is clicked
+        document.querySelectorAll('.category-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
+            });
+        });
+        
+        // Expand all categories
+        document.getElementById('expandAllBtn').addEventListener('click', () => {
+            document.querySelectorAll('.category-content').forEach(content => {
+                content.classList.add('active');
+            });
+        });
+        
+        // Collapse all categories
+        document.getElementById('collapseAllBtn').addEventListener('click', () => {
+            document.querySelectorAll('.category-content').forEach(content => {
+                content.classList.remove('active');
+            });
+        });
+        
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            document.querySelectorAll('.category').forEach(category => {
+                const categoryTitle = category.querySelector('.category-title').textContent.toLowerCase();
+                const categoryDesc = category.querySelector('.category-description').textContent.toLowerCase();
+                const categoryCode = category.dataset.code.toLowerCase();
+                
+                let categoryVisible = categoryTitle.includes(searchTerm) || 
+                                     categoryDesc.includes(searchTerm) || 
+                                     categoryCode.includes(searchTerm);
+                
+                let keywordsVisible = false;
+                
+                category.querySelectorAll('.keyword').forEach(keyword => {
+                    const keywordTitle = keyword.querySelector('.keyword-title').textContent.toLowerCase();
+                    const keywordId = keyword.querySelector('.keyword-id').textContent.toLowerCase();
+                    const keywordDef = keyword.querySelector('.keyword-definition').textContent.toLowerCase();
+                    const keywordCode = keyword.dataset.code.toLowerCase();
+                    
+                    const keywordVisible = keywordTitle.includes(searchTerm) || 
+                                         keywordId.includes(searchTerm) || 
+                                         keywordDef.includes(searchTerm) || 
+                                         keywordCode.includes(searchTerm);
+                    
+                    keyword.style.display = keywordVisible || searchTerm === '' ? 'block' : 'none';
+                    
+                    if (keywordVisible) {
+                        keywordsVisible = true;
+                    }
+                });
+                
+                category.style.display = (categoryVisible || keywordsVisible || searchTerm === '') ? 'block' : 'none';
+                
+                if (categoryVisible || keywordsVisible) {
+                    category.querySelector('.category-content').classList.add('active');
+                } else if (searchTerm !== '') {
+                    category.querySelector('.category-content').classList.remove('active');
+                }
+            });
+        });
+        
+        // Initially expand only the first category
+        document.querySelector('.category-content').classList.add('active');
+        
+        // Add keyword counts to category headers
+        document.querySelectorAll('.category').forEach(category => {
+            const keywordCount = category.querySelectorAll('.keyword').length;
+            const categoryTitle = category.querySelector('.category-title');
+            const countBadge = document.createElement('span');
+            countBadge.className = 'count-badge';
+            countBadge.textContent = keywordCount;
+            categoryTitle.appendChild(countBadge);
+        });
+    </script>
+</body>
+</html>
