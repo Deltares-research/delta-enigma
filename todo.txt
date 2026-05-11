@@ -8,7 +8,8 @@ Metadata schema
 - Topic category
     - Help text toevoegen @Vincent
 - Affiliation name + affiliation identifier
-    - Extend list with participating institute
+    - Extend list with parti
+    cipating institute
 - Default values to check
     - Legislation
     - Access rights

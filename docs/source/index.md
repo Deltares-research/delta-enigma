@@ -33,8 +33,9 @@ If you need guidance on data cleaning requirements or best practices, *contact y
 01_data_guidelines/01_data_collection
 01_data_guidelines/02_metadata_standards
 01_data_guidelines/03_folder_structure
-01_data_guidelines/04_vocabularies
-01_data_guidelines/05_example_metadata_per_sensor
+01_data_guidelines/04_access_to_yoda
+01_data_guidelines/05_vocabularies
+01_data_guidelines/06_example_metadata_per_sensor
 ```
 ```{toctree}
 :maxdepth: 2
@@ -55,4 +56,5 @@ If you need guidance on data cleaning requirements or best practices, *contact y
 03_general_info/01_sensors
 03_general_info/02_data_stewards
 03_general_info/03_locations
+03_general_info/04_access_to_yoda
 ```
