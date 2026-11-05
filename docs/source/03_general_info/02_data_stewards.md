@@ -5,7 +5,7 @@ Each knowledge institute appointed a data stewards as first point of contact for
 
 | Institute | Data Steward |
 |-----------|--------------|
-| Utrecht University | Vincent Brunst |
+| Utrecht University | Otto de Lange |
 | University of Twente | Emre Ozturk |
 | NIOZ | Adri Knuijt |
 | Deltares | Gerrit Hendriksen |

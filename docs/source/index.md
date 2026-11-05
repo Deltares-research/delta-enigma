@@ -17,7 +17,7 @@ If you need guidance on data cleaning requirements or best practices, *contact y
 
 | Institute | Data Steward |
 |-----------|--------------|
-| Utrecht University | Vincent Brunst |
+| Utrecht University | Otto de Lange |
 | University of Twente | Emre Ozturk |
 | NIOZ | Adri Knuijt |
 | Deltares | Gerrit Hendriksen |
