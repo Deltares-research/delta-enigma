@@ -1,5 +1,3 @@
-
-
 {
     "irods_authentication_scheme": "pam_password",
     "irods_client_server_negotiation": "request_server_negotiation",
@@ -14,5 +12,4 @@
     "irods_port": 1247,
     "irods_zone_name": "deltaenigma",
     "irods_user_name": "[YOUR USERNAME]"
-  }
-
+}

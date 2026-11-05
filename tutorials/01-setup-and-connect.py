@@ -1,61 +1,46 @@
-# /// script
-# requires-python = ">=3.13"
-# dependencies = [
-#     "ibridges>=1.5.1",
-# ]
-# ///
 # %% [markdown]
-# More information on how to connect to the iRODS server can be found [here](https://github.com/iBridges-for-iRODS/iBridges/blob/3ef9ed82133f76fd66add222dfb8f407a3d31681/tutorials/01-Setup-and-connect.ipynb). 
+# # 1. Set up and connect to Yoda
 #
-# There is a environments file in the .irods folder that you can use to connect to the iRODS server.
-# Go to the .irods folder and rename the file 'irods_environment[template].json' to 'irods_environment.json' and fill in your username.
-# Then we are ready to connect to the iRODS server.
+# Connects to the Delta Enigma Yoda environment and checks your settings in `config.py`.
+#
+# The first time you run this, you are asked for:
+# 1. your Yoda username: the e-mail address you log in to Yoda with;
+# 2. your Data Access Password: create one in the Yoda portal (see the README).
+#
+# Both are remembered on your computer. You only need to enter a new Data Access Password when the old one expires.
+#
+# More information: https://ibridges.readthedocs.io/en/latest/
 
 # %%
-from ibridges.interactive import interactive_auth
-import irods
-session = interactive_auth() 
-# Note that at this point we are still using local machine, not Yoda (yet)
-# make sure that you have a correct 'irods_environment.json' file in the .irods folder of your home directory
+from config import RESEARCH_GROUP, connect, target_collection
 
-# %%
-# ### Check the session parameters
-print(session.username)
-print(session.default_resc) # the resource to which data will be uploaded
-print(session.zone)
-print(session.server_version)
-print(session.get_user_info()) # lists user type and groups
-print(session.home) # 
+session = connect()
 
 # %% [markdown]
-# I you are connected, find the folder of your project, and make this your home directory
+# ### Check the session
+
 # %%
-from ibridges.path import IrodsPath
-from pathlib import Path
+print("Username:        ", session.username)
+print("Zone:            ", session.zone)
+print("Default resource:", session.default_resc)  # the resource to which data will be uploaded
+print("Server version:  ", session.server_version)
 
-# project variables
-research_folder = 'research-test'
-folder = 'Test-folder'
-location_name = 'zandmotor'
-
-home = IrodsPath(session, f'~/{research_folder}/{folder}/{location_name}/')
-
-# new data collection variables
-data_quality = 'raw-data'
-sensor_type = 'camera'
-sensor_id = 'camera1'
-year = '2024'
-
-irods_path = IrodsPath(session, home, f'{data_quality}/{sensor_type}/{sensor_id}')
-print("Current working location:", irods_path)
-new_collection = irods_path.joinpath(year)
-print("Demo collection name:", new_collection, "exists: ", new_collection.collection_exists())
-if not new_collection.collection_exists(): # if the collection does not exist, create it (including missing parent folders)
-    IrodsPath.create_collection(session, new_collection)
-    print("Collection created")
-else:
-    print("Collection already exists")
+user_type, groups = session.get_user_info()
+print("Research groups you have access to:")
+for group in sorted(groups):
+    if group.startswith("research-"):
+        print("  ", group)
 
 # %% [markdown]
-# Now we are ready to upload data. (see 02-upload-data.py)
+# ### Check your research group and folder
+# If `RESEARCH_GROUP` in `config.py` is not correct, this stops and lists the groups you can choose from.
+
 # %%
+collection = target_collection(session)
+print(f"Research group '{RESEARCH_GROUP}' found.")
+print("Scripts 02-04 will upload to and download from:", collection)
+
+session.close()
+
+# %% [markdown]
+# You are connected. Next: upload data with 02-upload-data.py.

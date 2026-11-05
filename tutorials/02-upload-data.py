@@ -1,41 +1,39 @@
 # %% [markdown]
-# ### Let's start by initializing the session
+# # 2. Upload data
+#
+# Uploads the local folder `UPLOAD_FOLDER` (set in `config.py`) to your research group on Yoda,
+# following the Delta Enigma folder structure. By default this is the example dataset in `example-data/May.26`.
+#
+# More information: https://ibridges.readthedocs.io/en/latest/data_transfers.html#upload
 
 # %%
-from ibridges.interactive import interactive_auth
-session = interactive_auth() #
+from ibridges import IrodsPath, upload
+
+from config import UPLOAD_FOLDER, connect, target_collection
+
+session = connect()
+
+# %% [markdown]
+# ### Create the destination folder on Yoda
 
 # %%
-from ibridges.path import IrodsPath
-from pathlib import Path
-# project variables
-research_folder = 'research-test'
-folder = 'Test-folder'
-location_name = 'zandmotor'
+collection = target_collection(session)
+if not collection.collection_exists():
+    IrodsPath.create_collection(session, collection)  # also creates missing parent folders
+    print("Created folder:", collection)
+else:
+    print("Folder already exists:", collection)
 
-home = IrodsPath(session, f'~/{research_folder}/{folder}/{location_name}/')
-
-# new data collection variables
-data_quality = 'raw-data'
-sensor_type = 'camera'
-sensor_id = 'camera1'
-year = '2024'
-
-irods_path = IrodsPath(session, home, f'{data_quality}/{sensor_type}/{sensor_id}/{year}')
-print("Current working location:", irods_path)
-print("Demo collection name:", irods_path, "exists: ", irods_path.collection_exists())
-if irods_path.collection_exists() == False: # if the collection does not exist, create it
-    IrodsPath.create_collection(session, irods_path)#link to the file you want to upload
-
+# %% [markdown]
+# ### Upload
 
 # %%
-# more info on https://ibridges.readthedocs.io/en/latest/data_transfers.html#upload
+upload(session, UPLOAD_FOLDER, collection, overwrite=True)  # overwrite=True replaces files that are already on Yoda
+print(f"Uploaded {UPLOAD_FOLDER} to {collection / UPLOAD_FOLDER.name}")
 
-from ibridges import upload
-upload_file_path = Path("May") 
-upload(session, upload_file_path, irods_path, overwrite=True)
+session.close()
 
-# The folder or file is now uploaded to the iRODS server.
-# You can check this by going to the Yoda website and navigating to the folder or file.
-# %%
-
+# %% [markdown]
+# You can check the result in the Yoda portal: https://deltaenigma-yoda.irods.surfsara.nl/
+#
+# Next: add metadata with 03-add-metadata.py.

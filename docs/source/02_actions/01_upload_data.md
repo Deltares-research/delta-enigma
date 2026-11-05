@@ -29,7 +29,7 @@ More information can be found [here](../01_data_guidelines/03_folder_structure).
 
 ## Upload Methods
 
-There are two primary methods for uploading data to Yoda. Choose the most appropriate method based on your needs:
+There are two primary methods for uploading data to Yoda. Choose the most appropriate method based on your needs. To upload data with a script instead, see [Working with Yoda from Python](05_python_scripts.md).
 
 ### Method 1: Web Portal (Recommended for small files)
 
