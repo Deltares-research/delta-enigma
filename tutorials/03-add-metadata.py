@@ -1,22 +1,54 @@
 # %% [markdown]
-# ### Let's start by initializing the session
+# # 3. Add metadata
+#
+# In Yoda, the metadata of a folder is stored in a file called `yoda-metadata.json` inside that folder.
+# This is the same file that the metadata form in the Yoda portal creates, and Yoda reads it automatically.
+# So adding metadata from a script means uploading a `yoda-metadata.json` file.
+#
+# This script adds `METADATA_FILE` (set in `config.py`) to the folder uploaded with 02-upload-data.py.
+# The example file contains placeholder values: fill in the metadata of your own data in the Yoda portal,
+# or edit a copy of the example file. See the handbook for the metadata standards:
+# https://deltares-research.github.io/delta-enigma/01_data_guidelines/02_metadata_standards.html
+
 # %%
-from ibridges.interactive import interactive_auth
-session = interactive_auth() # %%
-from ibridges.path import IrodsPath
-from pathlib import Path
-# project variables
-research_folder = 'research-deltares'
-work_package = 'WP1'
-location_name = 'zandmotor'
+from ibridges import upload
 
-home = IrodsPath(session, f'~/{research_folder}/{work_package}/{location_name}/')
+from config import METADATA_FILE, UPLOAD_FOLDER, connect, target_collection
 
-# new data collection variables
-data_quality = 'raw-data'
-sensor_type = 'camera'
-sensor_id = 'camera1'
-year = '2024'
+session = connect()
 
-irods_path = IrodsPath(session, home, f'{data_quality}/{sensor_type}/{sensor_id}/{year}')
-print("Current working location:", irods_path)
+dataset = target_collection(session) / UPLOAD_FOLDER.name
+if not dataset.collection_exists():
+    raise SystemExit(f"{dataset} does not exist. Run 02-upload-data.py first.")
+
+# %% [markdown]
+# ### Upload the Yoda metadata file
+
+# %%
+upload(session, METADATA_FILE, dataset / "yoda-metadata.json", overwrite=True)
+print("Added metadata to", dataset)
+
+# %% [markdown]
+# ### Check the metadata
+# Yoda stores the contents of `yoda-metadata.json` as key-value metadata on the folder.
+
+# %%
+print(dataset.meta)
+
+# %% [markdown]
+# ### Optional: add your own key-value metadata
+# You can also attach your own key-value pairs (with optional units) to folders and files.
+# These are not shown in the Yoda metadata form.
+# More information: https://ibridges.readthedocs.io/en/latest/metadata.html
+
+# %%
+meta = dataset.meta
+if "example_key" in meta:  # remove the old value, so the script can be run more than once
+    meta.delete("example_key")
+meta.add("example_key", "example value")
+print(meta["example_key"])
+
+session.close()
+
+# %% [markdown]
+# Next: download data with 04-download-data.py.

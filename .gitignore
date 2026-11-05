@@ -5,3 +5,4 @@ downloads/
 tutorials/.irods/irods_environment.json
 docs/.claude
 docs/CLAUDE.md
+__pycache__/
