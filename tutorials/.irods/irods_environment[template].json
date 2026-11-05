@@ -1,7 +1,7 @@
 
 
 {
-    "irods_authentication_scheme": "pam",
+    "irods_authentication_scheme": "pam_password",
     "irods_client_server_negotiation": "request_server_negotiation",
     "irods_client_server_policy": "CS_NEG_REQUIRE",
     "irods_host": "deltaenigma-data.irods.surfsara.nl",

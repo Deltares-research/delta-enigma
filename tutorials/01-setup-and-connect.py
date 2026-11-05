@@ -34,11 +34,11 @@ from ibridges.path import IrodsPath
 from pathlib import Path
 
 # project variables
-research_folder = 'research-deltares'
-work_package = 'WP1'
+research_folder = 'research-test'
+folder = 'Test-folder'
 location_name = 'zandmotor'
 
-home = IrodsPath(session, f'~/{research_folder}/{work_package}/{location_name}/')
+home = IrodsPath(session, f'~/{research_folder}/{folder}/{location_name}/')
 
 # new data collection variables
 data_quality = 'raw-data'
@@ -49,9 +49,9 @@ year = '2024'
 irods_path = IrodsPath(session, home, f'{data_quality}/{sensor_type}/{sensor_id}')
 print("Current working location:", irods_path)
 new_collection = irods_path.joinpath(year)
-print("Demo collection name:", new_collection, "exists: ", irods_path.collection_exists())
-if irods_path.collection_exists() == False: # if the collection does not exist, create it
-    IrodsPath.create_collection(session, irods_path)
+print("Demo collection name:", new_collection, "exists: ", new_collection.collection_exists())
+if not new_collection.collection_exists(): # if the collection does not exist, create it (including missing parent folders)
+    IrodsPath.create_collection(session, new_collection)
     print("Collection created")
 else:
     print("Collection already exists")

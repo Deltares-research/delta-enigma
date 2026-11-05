@@ -6,11 +6,11 @@ session = interactive_auth() # %%
 from ibridges.path import IrodsPath
 from pathlib import Path
 # project variables
-research_folder = 'research-deltares'
-work_package = 'WP1'
+research_folder = 'research-test'
+folder = 'Test-folder'
 location_name = 'zandmotor'
 
-home = IrodsPath(session, f'~/{research_folder}/{work_package}/{location_name}/')
+home = IrodsPath(session, f'~/{research_folder}/{folder}/{location_name}/')
 
 # new data collection variables
 data_quality = 'raw-data'
