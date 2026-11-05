@@ -1,0 +1,93 @@
+/* Import Open Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+/* Global text styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: black;
+}
+
+/* Keep headings black */
+:root {
+    h1 {
+        color: black !important;
+    }
+}
+
+/* Logo styling */
+.navbar-brand img {
+    max-height: 200px;  /* Adjust this value based on your needs */
+    width: auto;
+    padding: 5px;
+}
+
+/* For dark background compatibility */
+.navbar-brand {
+    background: transparent;
+}
+
+/* Optional: Add hover effect */
+.navbar-brand:hover {
+    opacity: 0.5;
+}
+
+/* Table styling */
+.bd-content table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.bd-content table thead tr {
+    border-bottom: 2px solid #ddd;  /* Thicker line below header */
+}
+
+.bd-content table tbody tr {
+    background-color: white !important;  /* Force white background for all rows */
+    border-bottom: 1px solid #ddd;  /* Thin grey line between rows */
+}
+
+.bd-content table tbody tr:hover {
+    background-color: #24A793 !important;
+}
+
+/* Remove any default table borders */
+.bd-content table td,
+.bd-content table th {
+    border: none;
+}
+
+/* If you want a subtle hover effect instead of purple, use: */
+/*
+table.docutils tr:hover {
+    background-color: #f8f9fa !important;  
+}
+*/
+
+/* Info block styling - reusable yellow blocks */
+.admonition.info-block {
+    --pst-icon-admonition-default: "";  /* Remove the bell icon */
+    background-color: #F5DEB3;  /* Sand color */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.admonition.info-block .admonition-title {
+    display: block;
+    background: none;
+    font-size: 1.5em;
+    color: black;
+    padding: 0 0 10px 0;
+    margin: 0;
+    border: none;
+    padding-left: 0 !important;
+}
+
+.admonition.info-block p.admonition-title::before,
+.admonition.info-block p.admonition-title::after {
+    display: none !important;
+}
