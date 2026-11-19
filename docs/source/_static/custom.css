@@ -91,3 +91,8 @@ table.docutils tr:hover {
 .admonition.info-block p.admonition-title::after {
     display: none !important;
 }
+/* Let mermaid diagrams use their natural height instead of the fixed 500px default */
+pre.mermaid > svg,
+.mermaid-container > pre > svg {
+    height: auto !important;
+}

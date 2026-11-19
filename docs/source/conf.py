@@ -35,7 +35,8 @@ extensions = [
     'sphinx.ext.napoleon',  # Support for NumPy and Google style docstrings
     'sphinx.ext.viewcode',  # Add links to source code
     #'sphinx_book_theme',
-    'myst_parser'            # Add text parser
+    'myst_parser',            # Add text parser
+    'sphinxcontrib.mermaid',  # Render mermaid diagrams
 ]
 
 # Add any paths that contain templates here, relative to this directory.

@@ -1,0 +1,59 @@
+sequenceDiagram
+    autonumber
+    actor R as Researcher
+    participant C as Processing environment<br/>(local, HPC or cloud)
+    participant RS as Yoda research space
+    actor DS as Data steward
+    participant V as Yoda vault
+    participant DC as DataCite
+    participant P as Public landing page
+
+    rect rgba(120, 160, 220, 0.12)
+    Note over R,RS: 1. Collect and upload
+    R->>RS: Upload raw sensor data (folder structure)
+    R->>RS: Add metadata (Delta Enigma metadata standard)
+    end
+
+    rect rgba(120, 200, 160, 0.12)
+    Note over R,RS: 2. Process outside Yoda
+    RS-->>R: Download raw data
+    R->>C: Clean, quality-control and transform
+    C-->>R: Refined, unaggregated dataset
+    R->>RS: Upload refined data and processing documentation
+    R->>RS: Complete metadata for the refined dataset
+    end
+
+    rect rgba(230, 180, 100, 0.12)
+    Note over R,V: 3. Secure in the vault
+    R->>RS: Submit folder to vault
+    RS->>DS: Notify: folder submitted
+    alt Data and metadata meet guidelines
+        DS->>RS: Accept submission
+        RS->>V: Copy data package to vault
+        Note over V: Unpublished
+    else Changes needed
+        DS-->>R: Reject with feedback
+        Note over RS: Folder unlocked for edits
+    end
+    end
+
+    rect rgba(200, 130, 200, 0.12)
+    Note over R,P: 4. Publish
+    R->>V: Request publication (accept terms)
+    Note over V: Submitted for publication
+    V->>DS: Notify: publication request
+    alt Approved
+        DS->>V: Approve for publication
+        Note over V: Approved for publication
+        V->>DC: Reserve DOI and register metadata
+        DC-->>V: DOI registered
+        V->>P: Publish landing page and public metadata
+        V->>DC: Link DOI to landing page
+        Note over V: Published
+        P-->>R: Dataset findable and citable via DOI
+    else Rejected
+        DS-->>V: Reject publication
+        Note over V: Unpublished
+        DS-->>R: Feedback on what to fix
+    end
+    end
